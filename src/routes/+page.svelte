@@ -1,12 +1,12 @@
 <script>
 	const sections = ['About', 'Projects', 'Experience'];
 
-	import youtube from '/Users/alyabouzaid/my-portfolio-website/static/images/youtubeicon.png';
-	import github from '/Users/alyabouzaid/my-portfolio-website/static/images/githubicon.png';
-	import linkedin from '/Users/alyabouzaid/my-portfolio-website/static/images/linkedinicon.png';
-	import prepguidess from '/Users/alyabouzaid/my-portfolio-website/static/images/prepguidess.png';
-	import zooss from '/Users/alyabouzaid/my-portfolio-website/static/images/zooss.png';
-	import terminalss from '/Users/alyabouzaid/my-portfolio-website/static/images/terminalss.png';
+	import youtube from '../static/images/youtubeicon.png';
+	import github from '../static/images/githubicon.png';
+	import linkedin from '../static/images/linkedinicon.png';
+	import prepguidess from '../static/images/prepguidess.png';
+	import zooss from '../static/images/zooss.png';
+	import terminalss from '../static/images/terminalss.png';
 </script>
 
 <!-- Main Container -->
