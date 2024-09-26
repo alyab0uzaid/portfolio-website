@@ -1,12 +1,6 @@
 <script>
 	const sections = ['About', 'Projects', 'Experience'];
 
-	// import youtube from '/Users/alyabouzaid/my-portfolio-website/static/images/youtubeicon.png';
-	// import github from '/Users/alyabouzaid/my-portfolio-website/static/images/githubicon.png';
-	// import linkedin from '/Users/alyabouzaid/my-portfolio-website/static/images/linkedinicon.png';
-	// import prepguidess from '/Users/alyabouzaid/my-portfolio-website/static/images/prepguidess.png';
-	// import zooss from '/Users/alyabouzaid/my-portfolio-website/static/images/zooss.png';
-	// import terminalss from '/Users/alyabouzaid/my-portfolio-website/static/images/terminalss.png';
 </script>
 
 <!-- Main Container -->
@@ -23,13 +17,13 @@
 				<!-- Social Links -->
 				<div class="flex space-x-4 my-6">
 					<a href="https://github.com/alyab0uzaid">
-						<img src='/Users/alyabouzaid/my-portfolio-website/static/images/githubicon.png' alt="GitHub" class="icon-animation w-9" />
+						<img src='/images/githubicon.png' alt="GitHub" class="icon-animation w-9" />
 					</a>
 					<a href="https://www.linkedin.com/in/alyabouzaid/" target="_blank">
-						<img src='/Users/alyabouzaid/my-portfolio-website/static/images/linkedinicon.png' alt="LinkedIn" class="icon-animation w-9" />
+						<img src='/images/linkedinicon.png' alt="LinkedIn" class="icon-animation w-9" />
 					</a>
 					<a href="https://www.youtube.com/@AlyAbouZaid" target="_blank">
-						<img src='/Users/alyabouzaid/my-portfolio-website/static/images/youtubeicon.png' alt="YouTube" class="icon-animation w-9" />
+						<img src='/images/youtubeicon.png' alt="YouTube" class="icon-animation w-9" />
 					</a>
 				</div>
 			</div>
@@ -110,7 +104,7 @@
 					<!-- Image Column with resizable width -->
 					<div class="flex-shrink-0">
 						<img
-							src='/Users/alyabouzaid/my-portfolio-website/static/images/prepguidess.png'
+							src='/images/prepguidess.png'
 							alt="PrepGuide.org Screenshot"
 							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
 							style="width: 150px"
@@ -133,7 +127,7 @@
 					<!-- Image Column with resizable width -->
 					<div class="flex-shrink-0">
 						<img
-							src='/Users/alyabouzaid/my-portfolio-website/static/images/zooss.png'
+							src='/images/zooss.png'
 							alt="PrepGuide.org Screenshot"
 							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
 							style="width: 150px"
@@ -153,7 +147,7 @@
 					<!-- Image Column with resizable width -->
 					<div class="flex-shrink-0">
 						<img
-							src='/Users/alyabouzaid/my-portfolio-website/static/images/terminalss.png'
+							src='/images/terminalss.png'
 							alt="PrepGuide.org Screenshot"
 							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
 							style="width: 150px"
