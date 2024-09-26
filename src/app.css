@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body {
+	font-family: 'Roboto Mono Variable', monospace;
+} */
+
+/* body {
+	font-family: 'DM Sans Variable', sans-serif;
+} */
+
 body {
-    font-family: 'Inter', sans-serif;
+	font-family: 'Inter', sans-serif;
+}
+
+/* body {
+	font-family: 'Monaco', monospace;
+} */
+
+/* Inside your app.css or global.css file */
+.heading-main {
+	@apply text-5xl font-bold;
+}
+
+.heading-section {
+	@apply text-lg font-semibold mb-6;
+}
+
+.heading-entry {
+	@apply text-lg;
+}
+
+.subheading-entry {
+	@apply text-base text-slate-400 mb-2;
+}
+
+.entry-description {
+	@apply text-sm text-slate-400;
+}
+
+.experience-entry {
+	@apply grid grid-cols-1 md:grid-cols-8 gap-4 mb-6;
+}
+
+.experience-year {
+	@apply text-sm col-span-2 text-slate-400;
+}
+
+.icon-animation {
+	@apply transform hover:scale-90 transition duration-100 ease-in-out;
 }
