@@ -1,12 +1,12 @@
 <script>
 	const sections = ['About', 'Projects', 'Experience'];
 
-	import youtube from '../static/images/youtubeicon.png';
-	import github from '../static/images/githubicon.png';
-	import linkedin from '../static/images/linkedinicon.png';
-	import prepguidess from '../static/images/prepguidess.png';
-	import zooss from '../static/images/zooss.png';
-	import terminalss from '../static/images/terminalss.png';
+	// import youtube from '/Users/alyabouzaid/my-portfolio-website/static/images/youtubeicon.png';
+	// import github from '/Users/alyabouzaid/my-portfolio-website/static/images/githubicon.png';
+	// import linkedin from '/Users/alyabouzaid/my-portfolio-website/static/images/linkedinicon.png';
+	// import prepguidess from '/Users/alyabouzaid/my-portfolio-website/static/images/prepguidess.png';
+	// import zooss from '/Users/alyabouzaid/my-portfolio-website/static/images/zooss.png';
+	// import terminalss from '/Users/alyabouzaid/my-portfolio-website/static/images/terminalss.png';
 </script>
 
 <!-- Main Container -->
@@ -23,13 +23,13 @@
 				<!-- Social Links -->
 				<div class="flex space-x-4 my-6">
 					<a href="https://github.com/alyab0uzaid">
-						<img src={github} alt="GitHub" class="icon-animation w-9" />
+						<img src='/Users/alyabouzaid/my-portfolio-website/static/images/githubicon.png' alt="GitHub" class="icon-animation w-9" />
 					</a>
 					<a href="https://www.linkedin.com/in/alyabouzaid/" target="_blank">
-						<img src={linkedin} alt="LinkedIn" class="icon-animation w-9" />
+						<img src='/Users/alyabouzaid/my-portfolio-website/static/images/linkedinicon.png' alt="LinkedIn" class="icon-animation w-9" />
 					</a>
 					<a href="https://www.youtube.com/@AlyAbouZaid" target="_blank">
-						<img src={youtube} alt="YouTube" class="icon-animation w-9" />
+						<img src='/Users/alyabouzaid/my-portfolio-website/static/images/youtubeicon.png' alt="YouTube" class="icon-animation w-9" />
 					</a>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 			<section>
 				<h1 class="heading-section">ABOUT ME</h1>
 				<p class="leading-relaxed mb-6">
-					Hi! I'm Aly Abou-Zaid, a computer science major with a minor in mass communications. I love
+					Hi!I'm Aly Abou-Zaid, a computer science major with a minor in mass communications. I love
 					building things that people enjoy, combining my technical skills in web development with
 					the creativity I developed through video production. <br><br>
                     
@@ -110,7 +110,7 @@
 					<!-- Image Column with resizable width -->
 					<div class="flex-shrink-0">
 						<img
-							src={prepguidess}
+							src='/Users/alyabouzaid/my-portfolio-website/static/images/prepguidess.png'
 							alt="PrepGuide.org Screenshot"
 							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
 							style="width: 150px"
@@ -133,7 +133,7 @@
 					<!-- Image Column with resizable width -->
 					<div class="flex-shrink-0">
 						<img
-							src={zooss}
+							src='/Users/alyabouzaid/my-portfolio-website/static/images/zooss.png'
 							alt="PrepGuide.org Screenshot"
 							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
 							style="width: 150px"
@@ -153,7 +153,7 @@
 					<!-- Image Column with resizable width -->
 					<div class="flex-shrink-0">
 						<img
-							src={terminalss}
+							src='/Users/alyabouzaid/my-portfolio-website/static/images/terminalss.png'
 							alt="PrepGuide.org Screenshot"
 							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
 							style="width: 150px"
