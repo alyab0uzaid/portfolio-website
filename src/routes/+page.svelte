@@ -1,6 +1,5 @@
 <script>
 	const sections = ['About', 'Projects', 'Experience'];
-
 </script>
 
 <!-- Main Container -->
@@ -17,13 +16,13 @@
 				<!-- Social Links -->
 				<div class="flex space-x-4 my-6">
 					<a href="https://github.com/alyab0uzaid">
-						<img src='/images/githubicon.png' alt="GitHub" class="icon-animation w-9" />
+						<img src="/images/githubicon.png" alt="GitHub" class="icon-animation w-9" />
 					</a>
 					<a href="https://www.linkedin.com/in/alyabouzaid/" target="_blank">
-						<img src='/images/linkedinicon.png' alt="LinkedIn" class="icon-animation w-9" />
+						<img src="/images/linkedinicon.png" alt="LinkedIn" class="icon-animation w-9" />
 					</a>
 					<a href="https://www.youtube.com/@AlyAbouZaid" target="_blank">
-						<img src='/images/youtubeicon.png' alt="YouTube" class="icon-animation w-9" />
+						<img src="/images/youtubeicon.png" alt="YouTube" class="icon-animation w-9" />
 					</a>
 				</div>
 			</div>
@@ -34,15 +33,23 @@
 			<section>
 				<h1 class="heading-section">ABOUT ME</h1>
 				<p class="leading-relaxed mb-6">
-					Hi!I'm Aly Abou-Zaid, a computer science major with a minor in mass communications. I love
-					building things that people enjoy, combining my technical skills in web development with
-					the creativity I developed through video production. <br><br>
-                    
-                    For a while, I was torn between
-					computer science and mass comm, but web development has allowed me to bridge both worlds.
-					I'm excited to keep learning, improving, and creating intuitive digital experiences that
-					make an impact
+					Hi! I'm Aly Abou-Zaid, a computer science major with a minor in mass communications. I
+					love building things that people enjoy, combining my technical skills in web development
+					with the creativity I developed through video production. <br /><br />
+
+					For a while, I was torn between computer science and mass comm, but web development has
+					allowed me to bridge both worlds. I'm excited to keep learning, improving, and creating
+					intuitive digital experiences that make an impact
 				</p>
+
+				<a
+					href="#"
+					class="arrow-link text-slate-400 mb-4"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Download My Resume<span class="arrow">↗</span>
+				</a>
 			</section>
 
 			<section id="experience">
@@ -100,67 +107,116 @@
 			<section>
 				<h1 class="heading-section">PROJECTS</h1>
 				<!-- PREPGUIDE-->
-				<div class="flex flex-col md:flex-row items-start gap-6 mb-10">
-					<!-- Image Column with resizable width -->
-					<div class="flex-shrink-0">
-						<img
-							src='/images/prepguidess.png'
-							alt="PrepGuide.org Screenshot"
-							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
-							style="width: 150px"
-						/>
+				<a
+					href="https://example.com"
+					class="project-entry"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="flex flex-col md:flex-row items-start gap-6">
+						<!-- Image Column with resizable width -->
+						<div class="flex-shrink-0">
+							<img
+								src="/images/prepguidess.png"
+								alt="PrepGuide.org Screenshot"
+								class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
+								style="width: 150px"
+							/>
+						</div>
+						<!-- Description Column -->
+
+						<div class="flex-grow">
+							<a
+								href="https://prepguide.org/"
+								class="arrow-link"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3 class="heading-entry pb-2">PrepGuide.org <span class="arrow">↗</span></h3>
+							</a>
+							<p class="entry-description">
+								PrepGuide is an online platform I co-founded with my brother to provide free
+								resources for SAT preparation. It offers targeted lessons, official test answer
+								keys, and personalized practice problems to help students optimize their study time
+								and improve their test performance.
+							</p>
+						</div>
 					</div>
-					<!-- Description Column -->
-					<div class="flex-grow">
-						<h3 class="heading-entry pb-2">PrepGuide.org</h3>
-						<p class="entry-description">
-							PrepGuide is an online platform I co-founded with my brother to provide free resources
-							for SAT preparation. It offers targeted lessons, official test answer keys, and
-							personalized practice problems to help students optimize their study time and improve
-							their test performance.
-						</p>
-					</div>
-				</div>
+				</a>
 
 				<!-- ZOO-->
-				<div class="flex flex-col md:flex-row items-start gap-6 mb-10">
-					<!-- Image Column with resizable width -->
-					<div class="flex-shrink-0">
-						<img
-							src='/images/zooss.png'
-							alt="PrepGuide.org Screenshot"
-							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
-							style="width: 150px"
-						/>
+				<a
+					href="https://example.com"
+					class="project-entry"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="flex flex-col md:flex-row items-start gap-6 mb-10">
+						<!-- Image Column with resizable width -->
+						<div class="flex-shrink-0">
+							<img
+								src="/images/zooss.png"
+								alt="PrepGuide.org Screenshot"
+								class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
+								style="width: 150px"
+							/>
+						</div>
+						<!-- Description Column -->
+						<div class="flex-grow">
+							<a
+								href="https://prepguide.org/"
+								class="arrow-link"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3 class="heading-entry pb-2">
+									Endangered Species Visualization Website<span class="arrow">↗</span>
+								</h3>
+							</a>
+							<p class="entry-description">
+								Created a fun, interactive website that maps endangered species at the Saint Louis
+								Zoo
+							</p>
+						</div>
 					</div>
-					<!-- Description Column -->
-					<div class="flex-grow">
-						<h3 class="heading-entry pb-2">Endangered Species Visualization Website</h3>
-						<p class="entry-description">
-							Created a fun, interactive website that maps endangered species at the Saint Louis Zoo
-						</p>
-					</div>
-				</div>
+				</a>
 
 				<!-- TERMINAL-->
-				<div class="flex flex-col md:flex-row items-start gap-6 mb-10">
-					<!-- Image Column with resizable width -->
-					<div class="flex-shrink-0">
-						<img
-							src='/images/terminalss.png'
-							alt="PrepGuide.org Screenshot"
-							class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
-							style="width: 150px"
-						/>
+				<a
+					href="https://example.com"
+					class="project-entry"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="flex flex-col md:flex-row items-start gap-6">
+						<!-- Image Column with resizable width -->
+						<div class="flex-shrink-0">
+							<img
+								src="/images/terminalss.png"
+								alt="PrepGuide.org Screenshot"
+								class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
+								style="width: 150px"
+							/>
+						</div>
+						<!-- Description Column -->
+						<div class="flex-grow">
+							<a
+								href="https://prepguide.org/"
+								class="arrow-link"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3 class="heading-entry pb-2">
+									Personal Terminal Website<span class="arrow">↗</span>
+								</h3>
+							</a>
+							<p class="entry-description">
+								Created a fun, interactive website that maps endangered species at the Saint Louis
+								Zoo
+							</p>
+						</div>
 					</div>
-					<!-- Description Column -->
-					<div class="flex-grow">
-						<h3 class="heading-entry pb-2">Personal Terminal Website</h3>
-						<p class="entry-description">
-							Created a fun, interactive website that maps endangered species at the Saint Louis Zoo
-						</p>
-					</div>
-				</div>
+				</a>
 			</section>
 		</main>
 	</div>
