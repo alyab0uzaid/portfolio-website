@@ -5,7 +5,7 @@
 <!-- Main Container -->
 <div class="flex justify-center items-start min-h-screen py-24">
 	<!-- Wrapper for content with responsive padding and maximum width -->
-	<div class="flex flex-col lg:flex-row w-full max-w-6xl sm:px-8 mx-auto">
+	<div class="flex flex-col lg:flex-row w-full max-w-6xl px-4 sm:px-8 mx-auto">
 		<!-- Sidebar (above main content on small screens) -->
         <aside class="w-full md:w-1/2">
             <div class="sticky top-24 pb-10 md:pb-0"> <!-- Sticky with normal bottom spacing -->
