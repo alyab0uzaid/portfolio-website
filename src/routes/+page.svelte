@@ -40,7 +40,7 @@
 
 		<!-- Main content (below sidebar on small screens) -->
 		<main class="w-full lg:w-1/2">
-			<section id="about">
+			<section id="about" class = "mb-6">
 				<h1 class="heading-section">ABOUT ME</h1>
 				<p class="leading-relaxed mb-6">
 					Hi! I'm Aly Abou-Zaid, a computer science major with a minor in mass communications. I
@@ -54,13 +54,41 @@
 
 				<a
 					href="#"
-					class="arrow-link text-slate-400 mb-4"
+					class="arrow-link text-slate-400"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					Download My Resume<span class="arrow">↗</span>
 				</a>
 			</section>
+
+            <section id="education" class = "mb-6">
+                <h2 class="heading-section">EDUCATION</h2>
+              
+                <div class="education-entry">
+                  <!-- Flexbox container to align University and Expected Graduation -->
+                  <div class="flex justify-between items-center mb-1">
+                    <h3 class="heading-entry">Southern Illinois University Edwardsville</h3>
+                    <div class="text-slate-400">Expected May 2025</div>
+                  </div>
+              
+                  <!-- Degree and Minor Information -->
+                  <div>
+                    <p class="subheading-entry text-slate-400">Bachelor of Arts in Computer Science, Minor in Mass Communications</p>
+                  </div>
+                  
+                  <!-- Badges for Achievements -->
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="badge">Dean's List | Fall 2022, Spring 2022, Fall 2023, Spring 2024</span>
+                    <span class="badge">Provost Scholarship Recipient</span>
+                    <span class="badge">John Martinson Honors Program Student</span>
+                    <span class="badge">eHacks 2024 Most Ambitious Project Award Recipient</span>
+                  </div>
+                </div>
+              </section>
+              
+              
+              
 
 			<section id="experience">
 				<h2 class="heading-section">EXPERIENCE</h2>
@@ -247,8 +275,7 @@
 							</h3>
 
 							<p class="entry-description">
-								Created a fun, interactive website that maps endangered species at the Saint Louis
-								Zoo
+								A unique, interactive personal website styled after a terminal interface.
 							</p>
 
 							<!-- Language Badges -->
