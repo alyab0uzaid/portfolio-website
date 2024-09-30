@@ -66,52 +66,85 @@
 				<h2 class="heading-section">EXPERIENCE</h2>
 
 				<!-- STUDENT GOVERNMENT-->
-				<div class="experience-entry">
-					<!-- Year Column -->
-					<div class="experience-year">2024 — Present</div>
-					<!-- Description Column -->
-					<div class="col-span-6">
-						<h3 class="heading-entry">SIUE Student Government</h3>
-						<h3 class="subheading-entry">Communication Officer</h3>
-						<p class="entry-description">
-							As Communications Officer, I manage Student Government's social media and
+                <div class="experience-entry grid grid-cols-1 md:grid-cols-8 md:gap-4 gap-y-0 md:mb-6 mb-2">
+                    <!-- Year Column for larger screens -->
+                    <div class="experience-year hidden md:block text-slate-400 col-span-1 md:col-span-2">
+                      2024 — Present
+                    </div>
+                  
+                    <!-- Description Column -->
+                    <div class="col-span-1 md:col-span-6">
+                      <h3 class="heading-entry">SIUE Student Government</h3>
+                  
+                      <!-- Year Column for small screens (appears under the title) -->
+                      <div class="experience-year text-slate-400 block md:hidden mb-2">
+                        2024 — Present
+                      </div>
+                  
+                      <h3 class="subheading-entry">Communication Officer</h3>
+                  
+                      <p class="entry-description">
+                        As Communications Officer, I manage Student Government's social media and
 							communication strategies. I organize internal bonding events and collaborate with team
 							members to align communication efforts with organizational goals, ensuring consistent
 							engagement with the student body.
-						</p>
-					</div>
-				</div>
+                      </p>
+                    </div>
+                  </div>
+                  
 
 				<!-- ENGAGEMENT CENTER -->
-				<div class="experience-entry">
-					<!-- Year Column -->
-					<div class="experience-year">2021 — 2022</div>
-					<!-- Description Column -->
-					<div class="col-span-6">
-						<h3 class="heading-entry">SIUE Engagement Center</h3>
-						<h3 class="subheading-entry">Engagement Ambassador</h3>
-						<p class="entry-description">
-							As an Engagement Ambassador, I built rapport with alumni through outreach, securing
+                <div class="experience-entry grid grid-cols-1 md:grid-cols-8 md:gap-4 gap-y-0 md:mb-6 mb-2">
+                    <!-- Year Column for larger screens -->
+                    <div class="experience-year hidden md:block text-slate-400 col-span-1 md:col-span-2">
+                        2021 — 2022
+                    </div>
+                  
+                    <!-- Description Column -->
+                    <div class="col-span-1 md:col-span-6">
+                      <h3 class="heading-entry">SIUE Engagement Center</h3>
+                  
+                      <!-- Year Column for small screens (appears under the title) -->
+                      <div class="experience-year text-slate-400 block md:hidden mb-2">
+                        2021 — 2022
+                      </div>
+                  
+                      <h3 class="subheading-entry">Engagement Ambassador</h3>
+                  
+                      <p class="entry-description">
+                        As an Engagement Ambassador, I built rapport with alumni through outreach, securing
 							donations to support the university's fundraising goals and campus initiatives while
 							maintaining up-to-date contact information.
-						</p>
-					</div>
-				</div>
+                      </p>
+                    </div>
+                  </div>
+                  
 
 				<!-- JIIMMYJOHNS -->
-				<div class="experience-entry">
-					<!-- Year Column -->
-					<div class="experience-year">2020 — 2021</div>
-					<!-- Description Column -->
-					<div class="col-span-6">
-						<h3 class="heading-entry">Jimmy John's</h3>
-						<h3 class="subheading-entry">Inshopper</h3>
-						<p class="entry-description">
-							Worked at the original Jimmy John's store, ensuring speedy service and quality
+                <div class="experience-entry grid grid-cols-1 md:grid-cols-8 md:gap-4 gap-y-0 md:mb-6 mb-2">
+                    <!-- Year Column for larger screens -->
+                    <div class="experience-year hidden md:block text-slate-400 col-span-1 md:col-span-2">
+                        2020 — 2021
+                    </div>
+                  
+                    <!-- Description Column -->
+                    <div class="col-span-1 md:col-span-6">
+                      <h3 class="heading-entry">Jimmy John's</h3>
+                  
+                      <!-- Year Column for small screens (appears under the title) -->
+                      <div class="experience-year text-slate-400 block md:hidden mb-2">
+                        2020 — 2021
+                      </div>
+                  
+                      <h3 class="subheading-entry">Inshopper</h3>
+                  
+                      <p class="entry-description">
+                        Worked at the original Jimmy John's store, ensuring speedy service and quality
 							sandwiches while managing in-store operations and customer interactions.
-						</p>
-					</div>
-				</div>
+                      </p>
+                    </div>
+                  </div>
+                  
 			</section>
 
 			<section id="projects">
