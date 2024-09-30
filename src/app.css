@@ -70,7 +70,15 @@ body {
 }
 
 .arrow-link:hover {
-	color: rgb(28 219 241);
+	color: #3498db;
+}
+
+.project-entry:hover .arrow {
+	transform: translate(3px, -3px); /* Moves the arrow up and to the right by 3px */
+}
+
+.project-entry:hover {
+	color: #3498db;
 }
 
 .project-entry {
@@ -88,4 +96,29 @@ body {
 	background: rgb(47, 47, 47); /* Semi-transparent background for the glass effect */
 	backdrop-filter: blur(8px); /* Blur the background behind the project entry */
 	border-top: 0.7px solid rgb(84, 84, 84); /* Slight light outline on top */
+}
+
+.project-thumb {
+    @apply rounded-lg object-cover w-full h-auto border-2 border-white/5;
+}
+
+.project-entry:hover .project-thumb {
+    @apply rounded-lg object-cover w-full h-auto border-2 border-white/20;
+}
+
+
+.badge {
+	@apply bg-white/10 text-white text-sm py-3 px-3 rounded-full border border-white/20 hover:bg-white/20 transition;
+}
+
+.toc-link {
+	@apply text-sm font-semibold mb-6;
+}
+
+.toc-link:hover {
+	color: #3498db;
+}
+
+.toc-link.active {
+	color: #3498db;
 }

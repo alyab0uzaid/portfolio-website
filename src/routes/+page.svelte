@@ -7,30 +7,40 @@
 	<!-- Wrapper for content with responsive padding and maximum width -->
 	<div class="flex flex-col lg:flex-row w-full max-w-6xl sm:px-8 mx-auto">
 		<!-- Sidebar (above main content on small screens) -->
-		<aside class="w-full md:w-1/2">
-			<div class="sticky top-24 pb-10">
-				<!-- Sidebar content -->
-				<h2 class="heading-main">Aly Abou-Zaid</h2>
-				<p class="text-slate-400 mt-2">Web Developer</p>
-
-				<!-- Social Links -->
-				<div class="flex space-x-4 my-6">
-					<a href="https://github.com/alyab0uzaid">
-						<img src="/images/githubicon.png" alt="GitHub" class="icon-animation w-9" />
-					</a>
-					<a href="https://www.linkedin.com/in/alyabouzaid/" target="_blank">
-						<img src="/images/linkedinicon.png" alt="LinkedIn" class="icon-animation w-9" />
-					</a>
-					<a href="https://www.youtube.com/@AlyAbouZaid" target="_blank">
-						<img src="/images/youtubeicon.png" alt="YouTube" class="icon-animation w-9" />
-					</a>
-				</div>
-			</div>
-		</aside>
+        <aside class="w-full md:w-1/2">
+            <div class="sticky top-24 pb-10 md:pb-0"> <!-- Sticky with normal bottom spacing -->
+              <!-- Sidebar content -->
+              <div class="md:text-left text-center"> <!-- Center alignment for small screens, left alignment for larger screens -->
+                <!-- Profile Picture -->
+                <img src="/images/profilepic.png" alt="Profile Picture" class="rounded-full w-32 h-32 mb-4 mx-auto md:mx-0 border-2 border-white/20" />
+                <!-- Name and Title -->
+                <h2 class="heading-main">Aly Abou-Zaid</h2>
+                <p class="text-slate-400 mt-2">Web Developer</p>
+              </div>
+          
+              <!-- Social Links - Normal alignment (not at the bottom) -->
+              <div class="mt-6">
+                <div class="flex space-x-4 justify-center md:justify-start">
+                  <a href="https://github.com/alyab0uzaid">
+                    <img src="/images/githubicon.png" alt="GitHub" class="icon-animation w-9" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/alyabouzaid/" target="_blank">
+                    <img src="/images/linkedinicon.png" alt="LinkedIn" class="icon-animation w-9" />
+                  </a>
+                  <a href="https://www.youtube.com/@AlyAbouZaid" target="_blank">
+                    <img src="/images/youtubeicon.png" alt="YouTube" class="icon-animation w-9" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </aside>
+          
+          
+          
 
 		<!-- Main content (below sidebar on small screens) -->
 		<main class="w-full lg:w-1/2">
-			<section>
+			<section id="about">
 				<h1 class="heading-section">ABOUT ME</h1>
 				<p class="leading-relaxed mb-6">
 					Hi! I'm Aly Abou-Zaid, a computer science major with a minor in mass communications. I
@@ -104,11 +114,11 @@
 				</div>
 			</section>
 
-			<section>
+			<section id="projects">
 				<h1 class="heading-section">PROJECTS</h1>
 				<!-- PREPGUIDE-->
 				<a
-					href="https://example.com"
+					href="https://prepguide.org"
 					class="project-entry"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -119,27 +129,26 @@
 							<img
 								src="/images/prepguidess.png"
 								alt="PrepGuide.org Screenshot"
-								class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
+								class="project-thumb"
 								style="width: 150px"
 							/>
 						</div>
 						<!-- Description Column -->
 
 						<div class="flex-grow">
-							<a
-								href="https://prepguide.org/"
-								class="arrow-link"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3 class="heading-entry pb-2">PrepGuide.org <span class="arrow">↗</span></h3>
-							</a>
+							<h3 class="heading-entry pb-2">PrepGuide.org <span class="arrow">↗</span></h3>
 							<p class="entry-description">
 								PrepGuide is an online platform I co-founded with my brother to provide free
 								resources for SAT preparation. It offers targeted lessons, official test answer
 								keys, and personalized practice problems to help students optimize their study time
 								and improve their test performance.
 							</p>
+
+							<!-- Language Badges -->
+							<div class="flex space-x-2 mt-4">
+								<span class="badge">Webflow</span>
+								<span class="badge">CMS</span>
+							</div>
 						</div>
 					</div>
 				</a>
@@ -151,32 +160,32 @@
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<div class="flex flex-col md:flex-row items-start gap-6 mb-10">
+					<div class="flex flex-col md:flex-row items-start gap-6">
 						<!-- Image Column with resizable width -->
 						<div class="flex-shrink-0">
 							<img
 								src="/images/zooss.png"
 								alt="PrepGuide.org Screenshot"
-								class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
+								class="project-thumb"
 								style="width: 150px"
 							/>
 						</div>
 						<!-- Description Column -->
 						<div class="flex-grow">
-							<a
-								href="https://prepguide.org/"
-								class="arrow-link"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3 class="heading-entry pb-2">
-									Endangered Species Visualization Website<span class="arrow">↗</span>
-								</h3>
-							</a>
+							<h3 class="heading-entry pb-2">
+								Endangered Species Visualization Website<span class="arrow">↗</span>
+							</h3>
 							<p class="entry-description">
 								Created a fun, interactive website that maps endangered species at the Saint Louis
 								Zoo
 							</p>
+
+							<!-- Language Badges -->
+							<div class="flex space-x-2 mt-4">
+								<span class="badge">HTML</span>
+								<span class="badge">CSS</span>
+								<span class="badge">Leaflet.js</span>
+							</div>
 						</div>
 					</div>
 				</a>
@@ -194,26 +203,27 @@
 							<img
 								src="/images/terminalss.png"
 								alt="PrepGuide.org Screenshot"
-								class="rounded-lg object-cover w-full h-auto border-2 border-white/20 p-1/2"
+								class="project-thumb"
 								style="width: 150px"
 							/>
 						</div>
 						<!-- Description Column -->
 						<div class="flex-grow">
-							<a
-								href="https://prepguide.org/"
-								class="arrow-link"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3 class="heading-entry pb-2">
-									Personal Terminal Website<span class="arrow">↗</span>
-								</h3>
-							</a>
+							<h3 class="heading-entry pb-2">
+								Personal Terminal Website<span class="arrow">↗</span>
+							</h3>
+
 							<p class="entry-description">
 								Created a fun, interactive website that maps endangered species at the Saint Louis
 								Zoo
 							</p>
+
+							<!-- Language Badges -->
+							<div class="flex space-x-2 mt-4">
+								<span class="badge">HTML</span>
+								<span class="badge">CSS</span>
+								<span class="badge">Javascript</span>
+							</div>
 						</div>
 					</div>
 				</a>

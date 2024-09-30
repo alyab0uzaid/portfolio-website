@@ -44,6 +44,7 @@
 	"dependencies": {
 		"@fontsource-variable/dm-sans": "^5.1.0",
 		"@fontsource-variable/roboto-mono": "^5.1.0",
-		"daisyui": "^4.12.10"
+		"daisyui": "^4.12.10",
+		"tocbot": "^4.30.0"
 	}
 }
