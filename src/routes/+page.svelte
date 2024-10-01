@@ -55,8 +55,8 @@
 					intuitive digital experiences that make an impact
 				</p>
 
-				<a href="#" class="arrow-link text-slate-400" target="_blank" rel="noopener noreferrer">
-					Download My Resume<span class="arrow">↗</span>
+				<a href="static/AlyAbou-ZaidResume2025.pdf" class="arrow-link text-slate-400" target="_blank" rel="noopener noreferrer">
+					View My Resume<span class="arrow">↗</span>
 				</a>
 			</section>
 
