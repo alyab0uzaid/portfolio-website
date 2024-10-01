@@ -99,13 +99,12 @@ body {
 }
 
 .project-thumb {
-    @apply rounded-lg object-cover w-full h-auto border-2 border-white/5;
+	@apply rounded-lg object-cover w-full h-auto border-2 border-white/5;
 }
 
 .project-entry:hover .project-thumb {
-    @apply rounded-lg object-cover w-full h-auto border-2 border-white/20;
+	@apply rounded-lg object-cover w-full h-auto border-2 border-white/20;
 }
-
 
 .badge {
 	@apply bg-white/10 text-white text-sm py-3 px-3 rounded-full border border-white/20 hover:bg-white/20 transition;
