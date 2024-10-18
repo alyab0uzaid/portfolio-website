@@ -55,7 +55,12 @@
 					intuitive digital experiences that make an impact
 				</p>
 
-				<a href="static/AlyAbou-ZaidResume2025.pdf" class="arrow-link text-slate-400" target="_blank" rel="noopener noreferrer">
+				<a
+					href="static/AlyAbou-ZaidResume2025.pdf"
+					class="arrow-link text-slate-400"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
 					View My Resume<span class="arrow">↗</span>
 				</a>
 			</section>
@@ -177,7 +182,7 @@
 						<div class="flex-shrink-0">
 							<img
 								src="/images/prepguidess.png"
-								alt="PrepGuide.org Screenshot"
+								alt="Zoo website Screenshot"
 								class="project-thumb"
 								style="width: 150px"
 							/>
@@ -201,7 +206,43 @@
 						</div>
 					</div>
 				</a>
+				<!-- TERMIFY-->
+				<a
+					href="https://github.com/alyab0uzaid/termify"
+					class="project-entry"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="flex flex-col md:flex-row items-start gap-6">
+						<!-- Image Column with resizable width -->
+						<div class="flex-shrink-0">
+							<img
+								src="/images/termifyss.png"
+								alt="Termify Screenshot"
+								class="project-thumb"
+								style="width: 150px"
+							/>
+						</div>
+						<!-- Description Column -->
+						<div class="flex-grow">
+							<h3 class="heading-entry pb-2">
+								Personal Spotify Terminal Interface<span class="arrow">↗</span>
+							</h3>
+							<p class="entry-description">
+								Termify provides a unique tactile experience for Spotify users, where they can
+								retrieve top tracks, save playlists, and log out from the terminal interface.
+							</p>
 
+							<!-- Language Badges -->
+							<div class="flex space-x-2 mt-4">
+								<span class="badge">Node.js</span>
+								<span class="badge">Express</span>
+								<span class="badge">Spotify API</span>
+								<span class="badge">Pug</span>
+							</div>
+						</div>
+					</div>
+				</a>
 				<!-- ZOO-->
 				<a
 					href="https://www.siue.edu/~aabouza/ZooProject/index.html"
@@ -225,8 +266,7 @@
 								Endangered Species Visualization Website<span class="arrow">↗</span>
 							</h3>
 							<p class="entry-description">
-								An interactive website that maps endangered species at the Saint Louis
-								Zoo
+								An interactive website that maps endangered species at the Saint Louis Zoo
 							</p>
 
 							<!-- Language Badges -->
@@ -238,80 +278,6 @@
 						</div>
 					</div>
 				</a>
-
-
-				<!-- TERMINAL-->
-				<a
-					href="https://alyab0uzaid.github.io/"
-					class="project-entry"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<div class="flex flex-col md:flex-row items-start gap-6">
-						<!-- Image Column with resizable width -->
-						<div class="flex-shrink-0">
-							<img
-								src="/images/terminalss.png"
-								alt="PrepGuide.org Screenshot"
-								class="project-thumb"
-								style="width: 150px"
-							/>
-						</div>
-						<!-- Description Column -->
-						<div class="flex-grow">
-							<h3 class="heading-entry pb-2">
-								Personal Terminal Website<span class="arrow">↗</span>
-							</h3>
-
-							<p class="entry-description">
-								A unique, interactive personal website styled after a terminal interface.
-							</p>
-
-							<!-- Language Badges -->
-							<div class="flex space-x-2 mt-4">
-								<span class="badge">HTML</span>
-								<span class="badge">CSS</span>
-								<span class="badge">Javascript</span>
-							</div>
-						</div>
-					</div>
-				</a>
-
-                <a
-					href="https://github.com/alyab0uzaid/spotifyMonthlyWrapped"
-					class="project-entry"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<div class="flex flex-col md:flex-row items-start gap-6">
-						<!-- Image Column with resizable width -->
-						<div class="flex-shrink-0">
-							<img
-								src="/images/SpotifySS.png"
-								alt="PrepGuide.org Screenshot"
-								class="project-thumb"
-								style="width: 150px"
-							/>
-						</div>
-						<!-- Description Column -->
-						<div class="flex-grow">
-							<h3 class="heading-entry pb-2">
-								Automated Spotify Playlist Creator<span class="arrow">↗</span>
-							</h3>
-							<p class="entry-description">
-								A Python application using the Spotipy library and Flask to automate the creation of personalized Spotify playlists
-							</p>
-
-							<!-- Language Badges -->
-							<div class="flex space-x-2 mt-4">
-								<span class="badge">Python</span>
-								<span class="badge">Flask</span>
-								<span class="badge">Spotipy</span>
-							</div>
-						</div>
-					</div>
-				</a>
-
 			</section>
 		</main>
 	</div>
