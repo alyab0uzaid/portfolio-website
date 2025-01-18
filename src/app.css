@@ -43,7 +43,7 @@ body {
 }
 
 .experience-year {
-	@apply text-sm col-span-2 text-yellow-400;
+	@apply text-sm col-span-2 text-slate-400;
 }
 
 .icon-animation {
