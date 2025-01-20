@@ -15,12 +15,11 @@ const config = {
 		},
 		extend: {
 			colors: {
-				red: "ff3c2f",
-				orange: "ff9500",
-				yellow: "ffcc01",
-				green: "27cd41",
+				red: "#ff3c2f",
+				orange: "#ff9500",
+				yellow: "#ffe252",
+				green: "#27cd41",
 				blue: "#007aff",
-				
 				border: "hsl(var(--border) / <alpha-value>)",
 				input: "hsl(var(--input) / <alpha-value>)",
 				ring: "hsl(var(--ring) / <alpha-value>)",

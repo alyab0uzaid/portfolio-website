@@ -48,7 +48,7 @@
       badges: ["HTML", "CSS", "Leaflet.js"],
       website: "https://alyabouzaid.com",
       showWebsite: true,
-      source: "#",
+      source: "https://github.com/alyab0uzaid/portfolio-website",
       showSource: true,
     },
   ];
@@ -65,7 +65,7 @@
 		  <img
 			src="/images/profilepicv2.jpeg"
 			alt="Profile Picture"
-			class="w-20 h-20 rounded-full border-2 border-neutral-300"
+			class="w-20 h-20 rounded-full border-2 border-neutral-300 dark:border-neutral-700"
 		  />
 		  <div class="ml-4">
 			<h1 class="text-xl font-bold">Aly Abou-Zaid</h1>
@@ -116,6 +116,7 @@
 		
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
 			{#each projects as project}
+			
 			  <Card.Root class=" flex flex-col h-96">
 				<!-- Image -->
 				<Card.Content class="p-0">
