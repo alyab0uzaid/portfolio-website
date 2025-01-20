@@ -4,6 +4,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import Icon from "@iconify/svelte";
 	import { toggleMode } from "mode-watcher";
+	import BlurFade from "$lib/BlurFade.svelte";
   
 	// projects data
 	const projects = [
@@ -62,7 +63,8 @@
 
 
 	  <!-- Header Section -->
-	  <header class="flex items-center mb-16 fadeInUp-animation">
+	  <BlurFade delay={0.25}>
+	  <header class="flex items-center mb-16">
 		<!-- Profile Picture and Name -->
 		
 		<div class="flex items-center">
@@ -95,25 +97,35 @@
 		  <span class="sr-only">Toggle theme</span>
 		</Button>
 	  </header>
+	  </BlurFade>
 	  
   
 	  <!-- About Section -->
+	  <BlurFade delay={0.35}>
 	  <section id="about" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">About Me</h2>
 			<p class="text-neutral-500 leading-relaxed">
 				Hi 👋 I’m Aly Abou-Zaid! Ever since I stumbled upon my first programming tutorial, I’ve been captivated by the endless possibilities of building things that not only work but also bring joy to people. Web development has been my gateway to merging my technical skills with my love for storytelling and design.
 			</p>
 		  
-			<p class="mt-4 text-neutral-500 leading-relaxed">I also really like     
+			<p class="mt-4 text-neutral-500 leading-relaxed">
+				I also really like
 				<a
-				href="/sunsets"
-				class="text-black dark:text-white underline">
-					sunsets
-		  		</a>
-				.
-			</p>
+				  href="/sunsets"
+				  class="relative bg-gradient-to-r from-yellow to-orange bg-clip-text text-transparent"
+				>
+				  sunsets
+				  <span
+					class="absolute left-0 bottom-0 h-[2px] w-full bg-gradient-to-r from-yellow to-orange"
+				  ></span>
+				</a>
+			  </p>
+			  
 	  </section>
+	  </BlurFade>
 
+	  <!-- Skill section -->
+	  <BlurFade delay={0.45}>
 	  <section id="skills" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">Skills</h2>
 		<Badge class="mb-1">HTML</Badge>
@@ -128,8 +140,11 @@
 		<Badge>Webflow</Badge>
 		<Badge>Eating</Badge>
 	  </section>
-  
+	  </BlurFade>
+
+	  
 	  <!-- Projects Section -->
+	  <BlurFade delay={0.55}>
 	  <section id="projects" class="fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">Projects</h2>
   
@@ -189,10 +204,8 @@
 			  </Card.Root>
 			{/each}
 		  </div>
-		  
-		  
-		  
-		  
 	  </section>
+	  </BlurFade>
+
 	</div>
   </div>

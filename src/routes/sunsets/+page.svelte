@@ -4,8 +4,6 @@
       { src: "static/images/sunsets/sunset2.jpg", alt: "Sunset 2", colSpan: "col-span-1", rowSpan: "row-span-1" },
       { src: "static/images/sunsets/sunset5.jpg", alt: "Sunset 5", colSpan: "col-span-1", rowSpan: "row-span-1" },
       { src: "static/images/sunsets/sunset3.jpg", alt: "Sunset 3", colSpan: "col-span-2", rowSpan: "row-span-2" },
-
-      
       { src: "static/images/sunsets/sunset4.jpg", alt: "Sunset 4", colSpan: "col-span-1", rowSpan: "row-span-1" },
 
     ];
