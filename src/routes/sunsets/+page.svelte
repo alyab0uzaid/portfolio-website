@@ -1,14 +1,17 @@
 <script>
     const sunsetPics = [
-      { src: "static/images/sunsets/sunset1.jpg", alt: "Sunset 1", colSpan: "col-span-2", rowSpan: "row-span-1" },
+      { src: "/images/sunsets/sunset1.jpg", alt: "Sunset 1", colSpan: "col-span-2", rowSpan: "row-span-1" },
       { src: "static/images/sunsets/sunset2.jpg", alt: "Sunset 2", colSpan: "col-span-1", rowSpan: "row-span-1" },
       { src: "static/images/sunsets/sunset5.jpg", alt: "Sunset 5", colSpan: "col-span-1", rowSpan: "row-span-1" },
       { src: "static/images/sunsets/sunset3.jpg", alt: "Sunset 3", colSpan: "col-span-2", rowSpan: "row-span-2" },
       { src: "static/images/sunsets/sunset4.jpg", alt: "Sunset 4", colSpan: "col-span-1", rowSpan: "row-span-1" },
 
     ];
+
+    import BlurFade from "$lib/BlurFade.svelte";
   </script>
-  
+
+
   <div class="flex justify-center items-start min-h-screen">
     <!-- Single Column Wrapper -->
     <div class="w-full max-w-2xl px-6 sm:px-8 py-20">
