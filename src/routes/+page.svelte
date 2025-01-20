@@ -3,6 +3,7 @@
 	import { Badge } from "$lib/components/ui/badge";
 	import { Button } from "$lib/components/ui/button";
 	import Icon from "@iconify/svelte";
+	import { toggleMode } from "mode-watcher";
   
 	// projects data
 	const projects = [
@@ -58,19 +59,39 @@
 	<!-- Single Column Wrapper -->
 	<div class="w-full max-w-2xl px-6 sm:px-6 py-20">
 	  <!-- Header Section -->
-	  <header class="flex items-center mb-16 fadeInUp-animation">
-		<!-- Profile Picture -->
-		<img
-		  src="/images/profilepicv2.jpeg"
-		  alt="Profile Picture"
-		  class="w-20 h-20 rounded-full border-2 border-neutral-300"
-		/>
-		<!-- Name and Title -->
-		<div class="ml-4">
-		  <h1 class="text-xl font-bold">Aly Abou-Zaid</h1>
-		  <p class="text-lg text-neutral-500">Web Developer</p>
+	  <header class="flex items-center mb-16">
+		<!-- Profile Picture and Name -->
+		<div class="flex items-center">
+		  <img
+			src="/images/profilepicv2.jpeg"
+			alt="Profile Picture"
+			class="w-20 h-20 rounded-full border-2 border-neutral-300"
+		  />
+		  <div class="ml-4">
+			<h1 class="text-xl font-bold">Aly Abou-Zaid</h1>
+			<p class="text-lg text-neutral-500">Web Developer</p>
+		  </div>
 		</div>
+	  
+		<!-- Dark Mode Button -->
+		<Button
+		  on:click={toggleMode}
+		  variant="outline"
+		  size="icon"
+		  class="ml-auto"
+		>
+		  <Icon
+			icon="si:sun-duotone"
+			class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+		  />
+		  <Icon
+			icon="solar:moon-line-duotone"
+			class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+		  />
+		  <span class="sr-only">Toggle theme</span>
+		</Button>
 	  </header>
+	  
   
 	  <!-- About Section -->
 	  <section id="about" class="mb-16 fadeInUp-animation">
@@ -108,16 +129,16 @@
 				<!-- Title and Description -->
 				<Card.Header class="flex-grow p-3 pt-2">
 				  <Card.Title >{project.title}</Card.Title>
-				  <Card.Description class="text-xs text-black">{project.date}</Card.Description>
+				  <Card.Description class="text-xs text-black dark:text-white">{project.date}</Card.Description>
 				  <Card.Description class="text-xs">{project.description}</Card.Description>
 				</Card.Header>
 		  
 				<!-- Badges and Footer -->
 				<div class="mt-auto p-3">
 				  <!-- Badges -->
-				  <div class="mb-3 text-neutral-900 text-xs font-medium flex gap-2 flex-wrap">
+				  <div class="mb-3 text-neutral-900 dark:text-neutral-100 text-xs font-medium flex gap-2 flex-wrap">
 					{#each project.badges as badge}
-					  <span class="bg-neutral-100 rounded p-1">{badge}</span>
+					  <span class="bg-neutral-100 dark:bg-neutral-900 rounded p-1">{badge}</span>
 					{/each}
 				  </div>
 		  
@@ -125,7 +146,7 @@
 				  <div class="flex gap-2 justify-start">
 					{#if project.showWebsite}
 					<button
-					  class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 text-white rounded-md shadow-sm transition duration-200"
+					  class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
 					  on:click={() => window.open(project.website, "_blank")}
 					>
 					  <Icon icon="proicons:globe" class="mr-2 h-4 w-4" />
@@ -134,7 +155,7 @@
 				  {/if}
 				  {#if project.showSource}
 					<button
-					  class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 text-white rounded-md shadow-sm transition duration-200"
+					class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
 					  on:click={() => window.open(project.source, "_blank")}
 					>
 					  <Icon icon="mdi:github" class="mr-2 h-4 w-4" />
