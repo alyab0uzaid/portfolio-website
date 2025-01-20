@@ -58,9 +58,13 @@
   <div class="flex justify-center items-start min-h-screen">
 	<!-- Single Column Wrapper -->
 	<div class="w-full max-w-2xl px-6 sm:px-6 py-20">
+
+
+
 	  <!-- Header Section -->
-	  <header class="flex items-center mb-16">
+	  <header class="flex items-center mb-16 fadeInUp-animation">
 		<!-- Profile Picture and Name -->
+		
 		<div class="flex items-center">
 		  <img
 			src="/images/profilepicv2.jpeg"
@@ -96,16 +100,33 @@
 	  <!-- About Section -->
 	  <section id="about" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">About Me</h2>
-		<p class="text-neutral-500 leading-relaxed">
-		  Hi 👋 I'm Aly Abou-Zaid, a computer science major with a minor in mass communications.
-		  I love building things that people enjoy, combining my technical skills in web
-		  development with the creativity I developed through video production. Web development
-		  allows me to bridge both worlds and create impactful digital experiences.
-		</p>
-		<p class="text-neutral-500 leading-relaxed mt-4">
-		  Outside of coding, I enjoy working on creative projects and exploring new ways to
-		  make digital content intuitive and engaging.
-		</p>
+			<p class="text-neutral-500 leading-relaxed">
+				Hi 👋 I’m Aly Abou-Zaid! Ever since I stumbled upon my first programming tutorial, I’ve been captivated by the endless possibilities of building things that not only work but also bring joy to people. Web development has been my gateway to merging my technical skills with my love for storytelling and design.
+			</p>
+		  
+			<p class="mt-4 text-neutral-500 leading-relaxed">I also really like     
+				<a
+				href="/sunsets"
+				class="text-black dark:text-white underline">
+					sunsets
+		  		</a>
+				.
+			</p>
+	  </section>
+
+	  <section id="skills" class="mb-16 fadeInUp-animation">
+		<h2 class="text-xl font-semibold mb-2">Skills</h2>
+		<Badge class="mb-1">HTML</Badge>
+		<Badge>CSS</Badge>
+		<Badge>JavaScript</Badge>
+		<Badge>SvelteKit</Badge>
+		<Badge>Illustrator</Badge>
+		<Badge>Premier Pro</Badge>
+		<Badge>After Effects</Badge>
+		<Badge>Photoshop</Badge>
+		<Badge>Figma</Badge>
+		<Badge>Webflow</Badge>
+		<Badge>Eating</Badge>
 	  </section>
   
 	  <!-- Projects Section -->

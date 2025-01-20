@@ -20,6 +20,7 @@ const config = {
 				yellow: "#ffe252",
 				green: "#27cd41",
 				blue: "#007aff",
+				lightblue: "#44adff",
 				border: "hsl(var(--border) / <alpha-value>)",
 				input: "hsl(var(--input) / <alpha-value>)",
 				ring: "hsl(var(--ring) / <alpha-value>)",
