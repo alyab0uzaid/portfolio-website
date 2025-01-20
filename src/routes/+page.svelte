@@ -13,8 +13,8 @@
       image: "/images/termifyss.png",
       badges: ["Node.js", "Express", "Spotify API", "Pug"],
       website: "#",
-      showWebsite: true,
-      source: "#",
+      showWebsite: false,
+      source: "https://github.com/alyab0uzaid/termify",
       showSource: true,
     },
     {
@@ -23,10 +23,10 @@
 	  description: "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
       image: "/images/prepguidess.png",
       badges: ["Webflow", "CMS"],
-      website: "#",
+      website: "https://www.prepguide.org/",
       showWebsite: true,
       source: "",
-      showSource: false, // Only show Website button
+      showSource: false, 
     },
     {
       title: "Endangered Species Visualization",
@@ -34,8 +34,8 @@
 	  description: "An interactive website that maps endangered species at the Saint Louis Zoo",
       image: "/images/zooss.png",
       badges: ["HTML", "CSS", "Leaflet.js"],
-      website: "",
-      showWebsite: false, // Only show Source button
+      website: "https://www.siue.edu/~aabouza/ZooProject/index.html",
+      showWebsite: true,
       source: "#",
       showSource: true,
     },
@@ -47,7 +47,7 @@
 	<!-- Single Column Wrapper -->
 	<div class="w-full max-w-2xl px-6 sm:px-6 py-20">
 	  <!-- Header Section -->
-	  <header class="flex items-center mb-16">
+	  <header class="flex items-center mb-16 fadeInUp-animation">
 		<!-- Profile Picture -->
 		<img
 		  src="/images/profilepicv2.jpeg"
@@ -62,27 +62,27 @@
 	  </header>
   
 	  <!-- About Section -->
-	  <section id="about" class="mb-16">
-		<h2 class="text-xl font-semibold">About Me</h2>
-		<p class="text-neutral-700 leading-relaxed">
+	  <section id="about" class="mb-16 fadeInUp-animation">
+		<h2 class="text-xl font-semibold mb-2">About Me</h2>
+		<p class="text-neutral-500 leading-relaxed">
 		  Hi! I'm Aly Abou-Zaid, a computer science major with a minor in mass communications.
 		  I love building things that people enjoy, combining my technical skills in web
 		  development with the creativity I developed through video production. Web development
 		  allows me to bridge both worlds and create impactful digital experiences.
 		</p>
-		<p class="text-neutral-700 leading-relaxed mt-4">
+		<p class="text-neutral-500 leading-relaxed mt-4">
 		  Outside of coding, I enjoy working on creative projects and exploring new ways to
 		  make digital content intuitive and engaging.
 		</p>
 	  </section>
   
 	  <!-- Projects Section -->
-	  <section id="projects">
-		<h2 class="text-xl font-semibold mb-8">Projects</h2>
+	  <section id="projects" class="fadeInUp-animation">
+		<h2 class="text-xl font-semibold mb-2">Projects</h2>
   
 		<!-- Cards Grid -->
 		
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
 			{#each projects as project}
 			  <Card.Root class=" flex flex-col h-96">
 				<!-- Image -->
