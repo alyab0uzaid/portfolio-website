@@ -6,6 +6,17 @@
   
 	// projects data
 	const projects = [
+	{
+      title: "PrepGuide.org",
+      date: "May 2024",
+	  description: "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
+      image: "/images/prepguidess.png",
+      badges: ["Webflow", "CMS"],
+      website: "https://www.prepguide.org/",
+      showWebsite: true,
+      source: "",
+      showSource: false, 
+    },
     {
       title: "Personal Spotify Terminal Interface",
       date: "June 2024",
@@ -18,23 +29,23 @@
       showSource: true,
     },
     {
-      title: "PrepGuide.org",
-      date: "May 2024",
-	  description: "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
-      image: "/images/prepguidess.png",
-      badges: ["Webflow", "CMS"],
-      website: "https://www.prepguide.org/",
-      showWebsite: true,
-      source: "",
-      showSource: false, 
-    },
-    {
       title: "Endangered Species Visualization",
       date: "April 2024",
 	  description: "An interactive website that maps endangered species at the Saint Louis Zoo",
       image: "/images/zooss.png",
       badges: ["HTML", "CSS", "Leaflet.js"],
       website: "https://www.siue.edu/~aabouza/ZooProject/index.html",
+      showWebsite: true,
+      source: "#",
+      showSource: true,
+    },
+	{
+	title: "Portofio Website",
+      date: "April 2024",
+	  description: "This website!",
+      image: "/images/portfolioss.png",
+      badges: ["HTML", "CSS", "Leaflet.js"],
+      website: "https://alyabouzaid.com",
       showWebsite: true,
       source: "#",
       showSource: true,
@@ -65,7 +76,7 @@
 	  <section id="about" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">About Me</h2>
 		<p class="text-neutral-500 leading-relaxed">
-		  Hi! I'm Aly Abou-Zaid, a computer science major with a minor in mass communications.
+		  Hi 👋 I'm Aly Abou-Zaid, a computer science major with a minor in mass communications.
 		  I love building things that people enjoy, combining my technical skills in web
 		  development with the creativity I developed through video production. Web development
 		  allows me to bridge both worlds and create impactful digital experiences.
