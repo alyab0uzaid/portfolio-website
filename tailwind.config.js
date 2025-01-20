@@ -14,6 +14,22 @@ const config = {
 			}
 		},
 		extend: {
+			animation: {
+				"border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+				gradient: "gradient 8s linear infinite",
+			  },
+			  keyframes: {
+				gradient: {
+					to: {
+					  "background-position": "200% center",
+					},
+				},
+				"border-beam": {
+				  "100%": {
+					"offset-distance": "100%",
+				  },
+				},
+			  },
 			colors: {
 				red: "#ff3c2f",
 				orange: "#ff9500",

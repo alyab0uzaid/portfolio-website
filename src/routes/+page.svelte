@@ -5,6 +5,8 @@
 	import Icon from "@iconify/svelte";
 	import { toggleMode } from "mode-watcher";
 	import BlurFade from "$lib/BlurFade.svelte";
+	import AnimatedGradientText from "$lib/AnimatedGradientText.svelte";
+	import { cn } from "$lib/utils";
   
 	// projects data
 	const projects = [
@@ -46,7 +48,7 @@
       date: "April 2024",
 	  description: "This website!",
       image: "/images/portfolioss.png",
-      badges: ["HTML", "CSS", "Leaflet.js"],
+      badges: ["SvelteKit", "TailwindCSS", "Cloudflare Pages"],
       website: "https://alyabouzaid.com",
       showWebsite: true,
       source: "https://github.com/alyab0uzaid/portfolio-website",
@@ -110,14 +112,30 @@
 		  
 			<p class="mt-4 text-neutral-500 leading-relaxed">
 				I also really like
-				<a
-				  href="/sunsets"
-				  class="relative bg-gradient-to-r from-yellow to-orange bg-clip-text text-transparent"
-				>
-				  sunsets
-				  <span
-					class="absolute left-0 bottom-0 h-[2px] w-full bg-gradient-to-r from-yellow to-orange"
-				  ></span>
+				<a href="/sunsets">
+				<AnimatedGradientText class="relative inline-flex">
+					
+					<span
+						class={cn(
+						`inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+						)}
+					>
+						sunsets
+					</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5"
+						><path d="m9 18 6-6-6-6" /></svg
+					>
+				</AnimatedGradientText>
 				</a>
 			  </p>
 			  
@@ -128,20 +146,19 @@
 	  <BlurFade delay={0.45}>
 	  <section id="skills" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">Skills</h2>
-		<Badge class="mb-1">HTML</Badge>
-		<Badge>CSS</Badge>
-		<Badge>JavaScript</Badge>
-		<Badge>SvelteKit</Badge>
-		<Badge>Illustrator</Badge>
-		<Badge>Premier Pro</Badge>
-		<Badge>After Effects</Badge>
-		<Badge>Photoshop</Badge>
-		<Badge>Figma</Badge>
-		<Badge>Webflow</Badge>
-		<Badge>Eating</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">HTML</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300" >CSS</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">JavaScript</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">SvelteKit</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">Illustrator</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">Premier Pro</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">After Effects</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">Photoshop</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">Figma</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">Webflow</Badge>
+		<Badge class="mb-1 dark:bg-neutral-300">Eating</Badge>
 	  </section>
 	  </BlurFade>
-
 	  
 	  <!-- Projects Section -->
 	  <BlurFade delay={0.55}>
@@ -149,7 +166,6 @@
 		<h2 class="text-xl font-semibold mb-2">Projects</h2>
   
 		<!-- Cards Grid -->
-		
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
 			{#each projects as project}
 			
