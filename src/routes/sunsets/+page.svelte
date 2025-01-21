@@ -94,18 +94,31 @@
       <div class="grid grid-cols-3 gap-4 fadeInUp-animation">
         {#each sunsetPics as pic}
           <div
+            tabindex="0"
+            role="button"
             class={`relative overflow-hidden rounded-lg shadow hover:shadow-lg transition cursor-pointer ${pic.colSpan} ${pic.rowSpan}`}
             on:click={() => (selectedSunset = pic)}
+            on:keydown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                selectedSunset = pic;
+              }
+            }}
           >
-            <!-- Sunset Image -->
-            <img
-              src={pic.src}
-              alt={pic.alt}
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            />
-  
-            <!-- Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+            <!-- Wrapping the image and overlay for scaling -->
+            <div class="transition-transform duration-300 ease-in-out hover:scale-105 h-full w-full">
+              <!-- Sunset Image -->
+              <img
+                src={pic.src}
+                alt={pic.alt}
+                class="w-full h-full object-cover"
+              />
+        
+              <!-- Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+            </div>
+        
+            <!-- Text Content -->
             <div class="absolute bottom-0 left-0 p-4 text-white">
               <!-- Location -->
               <div class="flex items-center space-x-1 text-sm font-mono">
@@ -118,6 +131,8 @@
           </div>
         {/each}
       </div>
+      
+      
     </div>
   </div>
   
