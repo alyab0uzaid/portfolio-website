@@ -7,7 +7,6 @@
 	import BlurFade from "$lib/BlurFade.svelte";
 	import AnimatedGradientText from "$lib/AnimatedGradientText.svelte";
 	import { cn } from "$lib/utils";
-	import { PinContainer } from "$lib/components/ui/ThreeDPin";
   
 	// projects data
 	const projects = [
