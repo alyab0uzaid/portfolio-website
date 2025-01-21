@@ -122,39 +122,28 @@
   </div>
   
   <!-- Modal -->
-  <Dialog.Root open={!!selectedSunset} onOpenChange={() => (selectedSunset = null)}>
-    <Dialog.Content class="bg-white dark:bg-neutral-900 rounded-lg shadow-xl max-w-4xl w-full p-6">
+  <!-- <Dialog.Root open={!!selectedSunset} onOpenChange={() => (selectedSunset = null)}>
+    <Dialog.Content
+      class="rounded-lg shadow-xl bg-white dark:bg-neutral-900 flex items-center justify-center p-0"
+      style="display: inline-block;"
+    >
       {#if selectedSunset}
-        <div class="flex flex-col md:flex-row items-start gap-6">
-          <!-- Image Section -->
-          <div class="flex-shrink-0 w-full md:w-1/2">
-            <img
-              src={selectedSunset.src}
-              alt={selectedSunset.alt}
-              class="rounded-lg object-contain w-full max-h-80"
-            />
-          </div>
-          <!-- Details Section -->
-          <div class="flex-grow">
-            <h3 class="text-lg font-semibold mb-2">{selectedSunset.location}</h3>
-            <p class="text-sm text-neutral-500 mb-4">{selectedSunset.date}</p>
-            <p class="text-sm text-neutral-600 dark:text-neutral-400 mb-4">{selectedSunset.description}</p>
-            <!-- Palette -->
-            <div class="flex space-x-2">
-              {#each selectedSunset.palette as color}
-                <div
-                  class="w-6 h-6 rounded-full"
-                  style="background-color: {color}"
-                  title={color}
-                ></div>
-              {/each}
-            </div>
-          </div>
+        <div
+          class={`relative rounded-lg overflow-hidden ${
+            selectedSunset.orientation === "portrait" ? "h-[450px] w-auto" : "h-auto w-[700px]"
+          }`}
+        >
+          <img
+            src={selectedSunset.src}
+            alt={selectedSunset.alt}
+            class="rounded-lg w-full h-full object-contain"
+          />
         </div>
       {/if}
     </Dialog.Content>
   </Dialog.Root>
+   -->
   
   
-  
+
   
