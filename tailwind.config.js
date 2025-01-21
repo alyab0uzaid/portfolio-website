@@ -14,6 +14,10 @@ const config = {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: [...fontFamily.sans], // Retains existing sans fonts
+				mono: ["'Roboto Mono'", "monospace"], // Adds Roboto Mono for monospaced text
+			  },
 			animation: {
 				"border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
 				gradient: "gradient 8s linear infinite",
