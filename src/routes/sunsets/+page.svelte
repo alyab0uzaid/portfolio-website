@@ -3,17 +3,6 @@
     import * as Dialog from "$lib/components/ui/dialog";
     import { onMount } from "svelte";
   
-    let imageOrientation = "landscape";
-  
-    function checkOrientation(src) {
-      const img = new Image();
-      img.src = src;
-  
-      img.onload = () => {
-        imageOrientation = img.naturalWidth > img.naturalHeight ? "landscape" : "portrait";
-      };
-    }
-  
     // Define a type for sunset objects
     type Sunset = {
       src: string;
