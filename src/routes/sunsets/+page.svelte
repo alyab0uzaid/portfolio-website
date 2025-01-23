@@ -2,6 +2,9 @@
     import Icon from "@iconify/svelte";
     import * as Dialog from "$lib/components/ui/dialog";
     import { onMount } from "svelte";
+    import BlurFade from "$lib/BlurFade.svelte";
+    import Button from "$lib/components/ui/button/button.svelte";
+    import { toggleMode } from "mode-watcher";
   
     // Define a type for sunset objects
     type Sunset = {
@@ -72,6 +75,7 @@
         colSpan: "col-span-1",
         rowSpan: "row-span-1",
         orientation: "portrait",
+        
       },
     ];
   
@@ -79,58 +83,99 @@
     let selectedSunset: Sunset | null = null;
   </script>
   
-  
+
+
   <div class="flex justify-center items-start min-h-screen">
-    <div class="w-full max-w-2xl px-6 sm:px-8 py-20">
-      <!-- About Section -->
+    <div class="w-full max-w-2xl px-6 sm:px-6 py-20">
+          	  <!-- Header Section -->
+                    <header class="flex items-center mb-16">
+                      <!-- Profile Picture and Name -->
+                      
+                      <div class="flex items-center">
+                        <a href="/">
+                            <img
+                            src="/images/profilepicv2.jpeg"
+                            alt="Profile Picture"
+                            class="w-20 h-20 rounded-full border-2 border-neutral-300 dark:border-neutral-700"
+                            />
+                        </a>
+                        <div class="ml-4">
+                          <h1 class="text-xl font-bold">Aly Abou-Zaid</h1>
+                          <p class="text-lg text-neutral-500">Web Developer</p>
+                        </div>
+                      </div>
+                    
+                      <!-- Dark Mode Button -->
+                      <Button
+                        on:click={toggleMode}
+                        variant="outline"
+                        size="icon"
+                        class="ml-auto"
+                      >
+                        <Icon
+                          icon="si:sun-duotone"
+                          class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+                        />
+                        <Icon
+                          icon="solar:moon-line-duotone"
+                          class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+                        />
+                        <span class="sr-only">Toggle theme</span>
+                      </Button>
+                    </header>
+
+      <!-- Title Section -->
       <section id="about" class="mb-8 fadeInUp-animation">
-        <h2 class="text-4xl font-semibold mb-2">Aly's Sunset Archive</h2>
+        <h2 class="text-2xl font-semibold mb-2">Aly's Sunset Archive</h2>
         <p class="text-neutral-500 leading-relaxed">
           Sunsets are a reminder of nature’s fleeting beauty. Here’s a collection of my favorite ones I’ve snapped on my phone over the years.
         </p>
       </section>
   
       <!-- Bento Grid -->
-      <div class="grid grid-cols-3 gap-4 fadeInUp-animation">
-        {#each sunsetPics as pic}
-          <div
-            tabindex="0"
-            role="button"
-            class={`relative overflow-hidden rounded-lg shadow hover:shadow-lg transition cursor-pointer ${pic.colSpan} ${pic.rowSpan}`}
-            on:click={() => (selectedSunset = pic)}
-            on:keydown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                selectedSunset = pic;
-              }
-            }}
-          >
-            <!-- Wrapping the image and overlay for scaling -->
-            <div class="transition-transform duration-300 ease-in-out hover:scale-105 h-full w-full">
-              <!-- Sunset Image -->
-              <img
-                src={pic.src}
-                alt={pic.alt}
-                class="w-full h-full object-cover"
-              />
-        
-              <!-- Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-            </div>
-        
-            <!-- Text Content -->
-            <div class="absolute bottom-0 left-0 p-4 text-white">
-              <!-- Location -->
-              <div class="flex items-center space-x-1 text-sm font-mono">
-                <Icon icon="fe:location" />
-                <span>{pic.location}</span>
-              </div>
-              <!-- Date -->
-              <p class="text-xs font-mono text-neutral-400">{pic.date}</p>
-            </div>
-          </div>
-        {/each}
+      <div
+  class="grid grid-cols-2 sm:grid-cols-3 gap-4 fadeInUp-animation"
+>
+  {#each sunsetPics as pic}
+    <div
+      tabindex="0"
+      role="button"
+      class={`relative overflow-hidden rounded-lg shadow hover:shadow-lg transition cursor-pointer ${pic.colSpan} ${pic.rowSpan}`}
+      on:click={() => (selectedSunset = pic)}
+      on:keydown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          selectedSunset = pic;
+        }
+      }}
+    >
+      <!-- Wrapping the image and overlay for scaling -->
+      <div class="transition-transform duration-300 ease-in-out hover:scale-105 h-full w-full">
+        <!-- Sunset Image -->
+        <img
+          src={pic.src}
+          alt={pic.alt}
+          class="w-full h-full object-cover"
+        />
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
       </div>
+
+      <!-- Text Content -->
+      <div class="absolute bottom-0 left-0 p-4 text-white">
+        <!-- Location -->
+        <div class="flex items-center space-x-1 text-sm font-mono">
+          <Icon icon="fe:location" />
+          <span>{pic.location}</span>
+        </div>
+        <!-- Date -->
+        <p class="text-xs font-mono text-neutral-400">{pic.date}</p>
+      </div>
+    </div>
+  {/each}
+</div>
+
       
       
     </div>

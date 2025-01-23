@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import * as Card from "$lib/components/ui/card";
 	import { Badge } from "$lib/components/ui/badge";
 	import { Button } from "$lib/components/ui/button";
@@ -10,71 +10,76 @@
   
 	// projects data
 	const projects = [
-	{
-      title: "PrepGuide.org",
-      date: "May 2024",
-	  description: "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
-      image: "/images/prepguidess.png",
-      badges: ["Webflow", "CMS"],
-      website: "https://www.prepguide.org/",
-      showWebsite: true,
-      source: "",
-      showSource: false, 
-    },
-    {
-      title: "Personal Spotify Terminal Interface",
-      date: "June 2024",
-	  description: "Termify provides a unique tactile experience for Spotify users, where they can retrieve top tracks, save playlists, and log out from the terminal interface.",
-      image: "/images/termifyss.png",
-      badges: ["Node.js", "Express", "Spotify API", "Pug"],
-      website: "#",
-      showWebsite: false,
-      source: "https://github.com/alyab0uzaid/termify",
-      showSource: true,
-    },
-    {
-      title: "Endangered Species Visualization",
-      date: "April 2024",
-	  description: "An interactive website that maps endangered species at the Saint Louis Zoo",
-      image: "/images/zooss.png",
-      badges: ["HTML", "CSS", "Leaflet.js"],
-      website: "https://www.siue.edu/~aabouza/ZooProject/index.html",
-      showWebsite: true,
-      source: "#",
-      showSource: true,
-    },
-	{
-	title: "Portofio Website",
-      date: "April 2024",
-	  description: "This website!",
-      image: "/images/portfolioss.png",
-      badges: ["SvelteKit", "TailwindCSS", "Cloudflare Pages"],
-      website: "https://alyabouzaid.com",
-      showWebsite: true,
-      source: "https://github.com/alyab0uzaid/portfolio-website",
-      showSource: true,
-    },
-  ];
+	  {
+		title: "PrepGuide.org",
+		date: "May 2024",
+		description:
+		  "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
+		image: "/images/prepguidess.png",
+		badges: ["Webflow", "CMS"],
+		website: "https://www.prepguide.org/",
+		showWebsite: true,
+		source: "",
+		showSource: false,
+	  },
+	  {
+		title: "Personal Spotify Terminal Interface",
+		date: "June 2024",
+		description:
+		  "Termify provides a unique tactile experience for Spotify users, where they can retrieve top tracks, save playlists, and log out from the terminal interface.",
+		video: "static/termifydemo.mov",
+		badges: ["Node.js", "Express", "Spotify API", "Pug"],
+		website: "#",
+		showWebsite: false,
+		source: "https://github.com/alyab0uzaid/termify",
+		showSource: true,
+	  },
+	  {
+		title: "Endangered Species Visualization",
+		date: "April 2024",
+		description:
+		  "An interactive website that maps endangered species at the Saint Louis Zoo.",
+		image: "/images/zooss.png",
+		badges: ["HTML", "CSS", "Leaflet.js"],
+		website: "https://www.siue.edu/~aabouza/ZooProject/index.html",
+		showWebsite: true,
+		source: "#",
+		showSource: true,
+	  },
+	  {
+		title: "Portfolio Website",
+		date: "April 2024",
+		description: "This website!",
+		image: "/images/portfolioss.png",
+		badges: ["SvelteKit", "TailwindCSS", "Cloudflare Pages"],
+		website: "https://alyabouzaid.com",
+		showWebsite: true,
+		source: "https://github.com/alyab0uzaid/portfolio-website",
+		showSource: true,
+	  },
+	];
   </script>
+  
+  
   
   <!-- Main Container -->
   <div class="flex justify-center items-start min-h-screen">
 	<!-- Single Column Wrapper -->
 	<div class="w-full max-w-2xl px-6 sm:px-6 py-20">
 
-
-
 	  <!-- Header Section -->
 	  <BlurFade delay={0.25}>
 	  <header class="flex items-center mb-16">
 		<!-- Profile Picture and Name -->
-		
-		<div class="flex items-center">
+		<div class="flex items-center" >
+		<a href="/">
 		  <img
 			src="/images/profilepicv2.jpeg"
 			alt="Profile Picture"
 			class="w-20 h-20 rounded-full border-2 border-neutral-300 dark:border-neutral-700"
+
 		  />
+		</a>
 		  <div class="ml-4">
 			<h1 class="text-xl font-bold">Aly Abou-Zaid</h1>
 			<p class="text-lg text-neutral-500">Web Developer</p>
@@ -166,23 +171,37 @@
 		<h2 class="text-xl font-semibold mb-2">Projects</h2>
   
 		<!-- Cards Grid -->
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 ">
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 			{#each projects as project}
-			
-			  <Card.Root class=" flex flex-col h-96">
-				<!-- Image -->
+			  <Card.Root class="flex flex-col h-96">
+				<!-- Video or Image -->
 				<Card.Content class="p-0">
-				  <img
-					src={project.image}
-					alt="{project.title}"
-					class="rounded-t-xl h-40 w-full object-cover"
-				  />
+				  {#if project.video}
+					<!-- Video Container -->
+					<video
+					  src={project.video}
+					  autoplay
+					  loop
+					  muted
+					  playsinline
+					  class="rounded-t-xl h-40 w-full object-cover"
+					></video>
+				  {:else}
+					<!-- Static Image -->
+					<img
+					  src={project.image}
+					  alt="{project.title}"
+					  class="rounded-t-xl h-40 w-full object-cover"
+					/>
+				  {/if}
 				</Card.Content>
 		  
 				<!-- Title and Description -->
 				<Card.Header class="flex-grow p-3 pt-2">
-				  <Card.Title >{project.title}</Card.Title>
-				  <Card.Description class="text-xs text-black dark:text-white">{project.date}</Card.Description>
+				  <Card.Title>{project.title}</Card.Title>
+				  <Card.Description class="text-xs text-black dark:text-white">
+					{project.date}
+				  </Card.Description>
 				  <Card.Description class="text-xs">{project.description}</Card.Description>
 				</Card.Header>
 		  
@@ -191,38 +210,39 @@
 				  <!-- Badges -->
 				  <div class="mb-3 text-neutral-900 dark:text-neutral-100 text-xs font-medium flex gap-2 flex-wrap">
 					{#each project.badges as badge}
-					  <span class="bg-neutral-100 dark:bg-neutral-900 rounded p-1">{badge}</span>
+					  <span class="bg-neutral-100 dark:bg-neutral-900 rounded p-1">
+						{badge}
+					  </span>
 					{/each}
 				  </div>
 		  
 				  <!-- Footer with Buttons -->
 				  <div class="flex gap-2 justify-start">
 					{#if project.showWebsite}
-					<button
-					  class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
-					  on:click={() => window.open(project.website, "_blank")}
-					>
-					  <Icon icon="proicons:globe" class="mr-2 h-4 w-4" />
-					  Website
-					</button>
-				  {/if}
-				  {#if project.showSource}
-					<button
-					class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
-					  on:click={() => window.open(project.source, "_blank")}
-					>
-					  <Icon icon="mdi:github" class="mr-2 h-4 w-4" />
-					  Source
-					</button>
-				  {/if}
+					  <button
+						class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
+						on:click={() => window.open(project.website, "_blank")}
+					  >
+						<Icon icon="proicons:globe" class="mr-2 h-4 w-4" />
+						Website
+					  </button>
+					{/if}
+					{#if project.showSource}
+					  <button
+						class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
+						on:click={() => window.open(project.source, "_blank")}
+					  >
+						<Icon icon="mdi:github" class="mr-2 h-4 w-4" />
+						Source
+					  </button>
+					{/if}
 				  </div>
 				</div>
 			  </Card.Root>
 			{/each}
-		  </div>
+		  </div>  
+		
 	  </section>
-
 	  </BlurFade>
-
 	</div>
   </div>
