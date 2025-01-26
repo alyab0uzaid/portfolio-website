@@ -41,7 +41,7 @@
 		  "An interactive website that maps endangered species at the Saint Louis Zoo.",
 		image: "/images/zooss.png",
 		badges: ["HTML", "CSS", "Leaflet.js"],
-		website: "stlzoovisualization.pages.dev",
+		website: "https://stlzoovisualization.pages.dev",
 		showWebsite: true,
 		source: "#",
 		showSource: true,
