@@ -77,6 +77,161 @@
         orientation: "portrait",
         
       },
+      {
+        src: "/images/sunsets/crosswalk.jpg",
+        alt: "crosswalk",
+        location: "Edwardsvile, Il",
+        date: "April 25, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+      
+      {
+        src: "/images/sunsets/sunset6.jpg",
+        alt: "Sunset 6",
+        location: "Edwardsville, IL",
+        date: "October 26, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-2",
+        rowSpan: "row-span-2",
+        orientation: "portrait",
+      },
+      {
+        src: "/images/sunsets/mecca.jpg",
+        alt: "mecca",
+        location: "Mecca, Saudi Arabia",
+        date: "July 10, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
+      {
+        src: "/images/sunsets/sunset12.jpg",
+        alt: "Sunset 12",
+        location: "Nafplio, Greece",
+        date: "Jul 20, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-2",
+        rowSpan: "row-span-1",
+        orientation: "landscape",
+      },
+      
+ 
+
+
+
+      {
+        src: "/images/sunsets/graduation.jpg",
+        alt: "graduation",
+        location: "Edwardsvile, Il",
+        date: "May 4, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
+      {
+        src: "/images/sunsets/sunset10.jpg",
+        alt: "Sunset 10",
+        location: "Edwardsville, IL",
+        date: "September 2, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
+      {
+        src: "/images/sunsets/sunset8.jpg",
+        alt: "Sunset 8",
+        location: "Edwardsville, IL",
+        date: "September 5, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
+
+      {
+        src: "/images/sunsets/sunset11.jpg",
+        alt: "Sunset 11",
+        location: "Edwardsville, IL",
+        date: "August 20, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
+      {
+        src: "/images/sunsets/sunset13.jpg",
+        alt: "Sunset 13",
+        location: "Greece",
+        date: "July 18, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
+      {
+        src: "/images/sunsets/sunset9.jpg",
+        alt: "Sunset 9",
+        location: "Edwardsville, IL",
+        date: "September 3, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-2",
+        rowSpan: "row-span-1",
+        orientation: "landscape",
+      },
+
+
+
+      
+
+
+
+      {
+        src: "/images/sunsets/ccpark.jpg",
+        alt: "ccpark",
+        location: "Creve Coeur, Missouri",
+        date: "May 19, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
+
+      {
+        src: "/images/sunsets/cottoncandy.jpg",
+        alt: "cottoncandy",
+        location: "Edwardsvile, Il",
+        date: "April 7, 2024",
+        description: "Fiery clouds illuminating the autumn sky.",
+        palette: ["#FF8C00", "#FFD700", "#FFB6C1", "#6495ED", "#FFFFFF"],
+        colSpan: "col-span-1",
+        rowSpan: "row-span-1",
+        orientation: "portrait",
+      },
+
     ];
   
     // Define the selectedSunset as type Sunset or null
