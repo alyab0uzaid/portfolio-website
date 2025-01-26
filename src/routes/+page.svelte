@@ -27,7 +27,7 @@
 		date: "June 2024",
 		description:
 		  "Termify provides a unique tactile experience for Spotify users, where they can retrieve top tracks, save playlists, and log out from the terminal interface.",
-		video: "static/termifydemo.mov",
+		video: "static/termifydemoV5.mp4",
 		badges: ["Node.js", "Express", "Spotify API", "Pug"],
 		website: "#",
 		showWebsite: false,
