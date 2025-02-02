@@ -15,7 +15,7 @@
 		date: "May 2024",
 		description:
 		  "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
-		image: "/images/prepguidess.png",
+		video: "/PrepGuideDemov2.mov",
 		badges: ["Webflow", "CMS"],
 		website: "https://www.prepguide.org/",
 		showWebsite: true,
@@ -50,7 +50,7 @@
 		title: "Portfolio Website",
 		date: "April 2024",
 		description: "This website!",
-		image: "/images/portfolioss.png",
+		image: "/images/portfoliodemov3.png",
 		badges: ["SvelteKit", "TailwindCSS", "Cloudflare Pages"],
 		website: "https://alyabouzaid.com",
 		showWebsite: true,
@@ -173,7 +173,7 @@
 		<!-- Cards Grid -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 			{#each projects as project}
-			  <Card.Root class="flex flex-col h-96">
+			  <Card.Root class="flex flex-col h-96  border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out  ">
 				<!-- Video or Image -->
 				<Card.Content class="p-0">
 				  {#if project.video}

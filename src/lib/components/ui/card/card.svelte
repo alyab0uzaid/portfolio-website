@@ -10,7 +10,7 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	class={cn("bg-card text-card-foreground rounded-xl border hover:shadow-lg transition-shadow duration-300 ease-in-out", className)}
+	class={cn("bg-card text-card-foreground rounded-xl", className)}
 	{...$$restProps}
 	on:click
 	on:focusin
