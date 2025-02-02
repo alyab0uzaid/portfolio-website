@@ -76,7 +76,7 @@
 
 	  <!-- Header Section -->
 	  <BlurFade delay={0.25}>
-	  <header class="flex items-center mb-16">
+	  <header class="flex items-center justify-between mb-16">
 		<!-- Profile Picture and Name -->
 		<div class="flex items-center" >
 		<a href="/">
@@ -93,23 +93,54 @@
 		  </div>
 		</div>
 	  
-		<!-- Dark Mode Button -->
-		<Button
-		  on:click={toggleMode}
-		  variant="outline"
-		  size="icon"
-		  class="ml-auto"
-		>
-		  <Icon
-			icon="si:sun-duotone"
-			class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-		  />
-		  <Icon
-			icon="solar:moon-line-duotone"
-			class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-		  />
-		  <span class="sr-only">Toggle theme</span>
-		</Button>
+    <!-- Right Side: Social Icons + Dark Mode -->
+    <div class="flex items-center gap-3">
+      <!-- GitHub -->
+      <a
+        href="https://github.com/alyab0uzaid"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition"
+      >
+        <Icon icon="mdi:github" class="h-6 w-6" />
+      </a>
+
+      <!-- LinkedIn -->
+      <a
+        href="https://linkedin.com/in/alyab0uzaid"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-neutral-700 dark:text-neutral-300 hover:text-blue dark:hover:text-blue-400 transition"
+      >
+        <Icon icon="mdi:linkedin" class="h-6 w-6" />
+      </a>
+
+      <!-- Youtube -->
+      <a
+        href="https://www.youtube.com/@AlyAbouZaid"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-neutral-700 dark:text-neutral-300 hover:text-red dark:hover:text-blue-300 transition"
+      >
+        <Icon icon="mdi:youtube" class="h-6 w-6" />
+      </a>
+
+		<!-- Vertical Separator -->
+		<div class="h-6 w-px bg-neutral-400 dark:bg-neutral-600 mx-2"></div>
+
+      <!-- Dark Mode Button -->
+      <Button on:click={toggleMode} variant="ghost" size="icon">
+        <Icon
+          icon="si:sun-duotone"
+          class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+        />
+        <Icon
+          icon="solar:moon-line-duotone"
+          class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+        />
+        <span class="sr-only">Toggle theme</span>
+      </Button>
+    </div>
 		
 
 		
