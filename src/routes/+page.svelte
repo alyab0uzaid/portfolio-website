@@ -95,6 +95,9 @@
 	  
     <!-- Right Side: Social Icons + Dark Mode -->
     <div class="flex items-center gap-3">
+		
+	<!-- Social Icons (Hidden on Mobile) -->
+	<div class="hidden sm:flex space-x-3">
       <!-- GitHub -->
       <a
         href="https://github.com/alyab0uzaid"
@@ -127,6 +130,7 @@
 
 		<!-- Vertical Separator -->
 		<div class="h-6 w-px bg-neutral-400 dark:bg-neutral-600 mx-2"></div>
+	  </div>
 
       <!-- Dark Mode Button -->
       <Button on:click={toggleMode} variant="ghost" size="icon">
