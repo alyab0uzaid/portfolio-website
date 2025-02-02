@@ -7,6 +7,8 @@
 	import BlurFade from "$lib/BlurFade.svelte";
 	import AnimatedGradientText from "$lib/AnimatedGradientText.svelte";
 	import { cn } from "$lib/utils";
+	import Dock from "$lib/components/ui/dock/Dock.svelte";
+	import DockIcon from "$lib/components/ui/dock/Dockicon.svelte"
   
 	// projects data
 	const projects = [
@@ -21,6 +23,7 @@
 		showWebsite: true,
 		source: "",
 		showSource: false,
+		caseStudy: "/casestudies/prepguide"
 	  },
 	  {
 		title: "Personal Spotify Terminal Interface",
@@ -33,6 +36,7 @@
 		showWebsite: false,
 		source: "https://github.com/alyab0uzaid/termify",
 		showSource: true,
+		caseStudy: "/casestudies/termify"
 	  },
 	  {
 		title: "Endangered Species Visualization",
@@ -45,6 +49,7 @@
 		showWebsite: true,
 		source: "#",
 		showSource: true,
+		caseStudy: "/casestudies/zoo"
 	  },
 	  {
 		title: "Portfolio Website",
@@ -56,14 +61,16 @@
 		showWebsite: true,
 		source: "https://github.com/alyab0uzaid/portfolio-website",
 		showSource: true,
+		caseStudy: "/casestudies/portfolio"
 	  },
 	];
   </script>
   
-  
+
   
   <!-- Main Container -->
   <div class="flex justify-center items-start min-h-screen">
+	
 	<!-- Single Column Wrapper -->
 	<div class="w-full max-w-2xl px-6 sm:px-6 py-20">
 
@@ -103,6 +110,9 @@
 		  />
 		  <span class="sr-only">Toggle theme</span>
 		</Button>
+		
+
+		
 	  </header>
 	  </BlurFade>
 	  
@@ -172,7 +182,9 @@
   
 		<!-- Cards Grid -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
 			{#each projects as project}
+			<a href={project.caseStudy}>
 			  <Card.Root class="flex flex-col h-96  border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out  ">
 				<!-- Video or Image -->
 				<Card.Content class="p-0">
@@ -239,7 +251,9 @@
 				  </div>
 				</div>
 			  </Card.Root>
+			</a>
 			{/each}
+
 		  </div>  
 		
 	  </section>
