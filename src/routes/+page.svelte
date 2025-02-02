@@ -107,7 +107,7 @@
 
       <!-- LinkedIn -->
       <a
-        href="https://linkedin.com/in/alyab0uzaid"
+        href="https://www.linkedin.com/in/alyabouzaid/"
         target="_blank"
         rel="noopener noreferrer"
         class="text-neutral-700 dark:text-neutral-300 hover:text-blue dark:hover:text-blue-400 transition"
