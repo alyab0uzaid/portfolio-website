@@ -12,6 +12,19 @@
   
 	// projects data
 	const projects = [
+		{
+		title: "RabbitHole Chrome Extension",
+		date: "March 2025",
+		description:
+		  "A Chrome extension that integrates Wikipedia content and visualizes your exploration journey across webpages.",
+		video: "/rabbitholetest.mp4",
+		badges: ["JavaScript", "HTML", "CSS", "GoJS","Chrome Extension API", "Wikipedia API"],
+		website: "",
+		showWebsite: false,
+		source: "https://github.com/alyab0uzaid/RabbitHole",
+		showSource: true,
+		caseStudy: "/casestudies/prepguide"
+	  },
 	  {
 		title: "PrepGuide.org",
 		date: "May 2024",
