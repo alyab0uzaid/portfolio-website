@@ -1,114 +1,140 @@
 <script lang="ts">
-	import * as Card from "$lib/components/ui/card";
-	import { Badge } from "$lib/components/ui/badge";
 	import { Button } from "$lib/components/ui/button";
 	import Icon from "@iconify/svelte";
-	import { toggleMode } from "mode-watcher";
 	import BlurFade from "$lib/BlurFade.svelte";
-	import AnimatedGradientText from "$lib/AnimatedGradientText.svelte";
 	import { cn } from "$lib/utils";
 
-    const projects = [
-	  {
+	const project = {
 		title: "PrepGuide.org",
 		date: "May 2024",
-		description:
-		  "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
+		description: "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
 		video: "/PrepGuideDemov2.mov",
 		badges: ["Webflow", "CMS"],
 		website: "https://www.prepguide.org/",
 		showWebsite: true,
-		source: "",
-		showSource: false,
-		caseStudy: "/casestudies/prepguide"
-	  },
-	  {
-		title: "Personal Spotify Terminal Interface",
-		date: "June 2024",
-		description:
-		  "Termify provides a unique tactile experience for Spotify users, where they can retrieve top tracks, save playlists, and log out from the terminal interface.",
-		video: "/termifydemov6.mp4",
-		badges: ["Node.js", "Express", "Spotify API", "Pug"],
-		website: "#",
-		showWebsite: false,
-		source: "https://github.com/alyab0uzaid/termify",
-		showSource: true,
-		caseStudy: "/casestudies/termify"
-	  },
-	  {
-		title: "Endangered Species Visualization",
-		date: "April 2024",
-		description:
-		  "An interactive website that maps endangered species at the Saint Louis Zoo.",
-		image: "/images/zooss.png",
-		badges: ["HTML", "CSS", "Leaflet.js"],
-		website: "https://stlzoovisualization.pages.dev",
-		showWebsite: true,
-		source: "#",
-		showSource: true,
-		caseStudy: "/casestudies/zoo"
-	  },
-	  {
-		title: "Portfolio Website",
-		date: "April 2024",
-		description: "This website!",
-		image: "/images/portfoliodemov3.png",
-		badges: ["SvelteKit", "TailwindCSS", "Cloudflare Pages"],
-		website: "https://alyabouzaid.com",
-		showWebsite: true,
-		source: "https://github.com/alyab0uzaid/portfolio-website",
-		showSource: true,
-		caseStudy: "/casestudies/portfolio"
-	  },
-	];
-  </script>
+		problem: "Many students struggle to find high-quality, free resources for SAT preparation. Existing platforms often require expensive subscriptions or don't provide comprehensive, well-organized study materials.",
+		solution: "PrepGuide.org was created to provide free, high-quality SAT preparation resources in an organized and accessible format. The platform offers a comprehensive collection of study materials, practice tests, and learning resources.",
+		features: [
+			"Free access to comprehensive SAT study materials",
+			"Organized content structure for easy navigation",
+			"Practice tests and quizzes",
+			"Study guides and tips",
+			"Regular content updates"
+		],
+		challenges: [
+			"Creating a scalable content management system",
+			"Ensuring content quality and accuracy",
+			"Designing an intuitive user interface",
+			"Managing regular content updates"
+		],
+		technologies: [
+			{
+				name: "Webflow",
+				description: "For website design and development"
+			},
+			{
+				name: "CMS",
+				description: "For content management and organization"
+			}
+		]
+	};
+</script>
 
-<!-- Main Container -->
-<!-- <div class="flex justify-center items-start min-h-screen"> -->
-	<!-- Single Column Wrapper -->
-	<!-- <div class="w-full max-w-2xl px-6 sm:px-6 py-20"> -->
-	  <!-- Header Section -->
-	  <!-- <BlurFade delay={0.25}>
-        <header class="flex items-center mb-8"> -->
-          <!-- Profile Picture and Name -->
-          <!-- <div class="flex items-center" >
-            <div class="">
-              <h1 class="text-3xl font-bold">PrepGuide</h1>
-
-            </div>
-          </div>
-        </header>
-        </BlurFade> -->
-
-        	  <!-- About Section -->
-	  <!-- <BlurFade delay={0.35}>
-        <section id="about" class="mb-16 fadeInUp-animation">
-              <p class="text-neutral-500 leading-relaxed">
-                PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.
-              </p>
-            
-        </section>
-        </BlurFade>
-
-    </div>
-</div> -->
-
-
-<!-- Main Container -->
 <div class="flex justify-center items-start min-h-screen">
-	<!-- Single Column Wrapper -->
-	<div class="w-full max-w-2xl px-6 sm:px-6 py-20">
-	  <!-- Header Section -->
-	  <BlurFade delay={0.25}>
-        <header class="flex items-center mb-8">
-          <!-- Profile Picture and Name -->
-          <div class="flex items-center" >
-            <div class="">
-              <h1 class="text-2xl">Coming Soon...</h1>
+	<div class="w-full max-w-4xl px-6 sm:px-6 py-20">
+		<!-- Back Button -->
+		<BlurFade delay={0.25}>
+			<div class="mb-8">
+				<a href="/" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition">
+					<Icon icon="mdi:arrow-left" class="h-6 w-6 inline-block mr-2" />
+					Back to Home
+				</a>
+			</div>
+		</BlurFade>
 
-            </div>
-          </div>
-        </header>
-        </BlurFade>
-    </div>
+		<!-- Project Header -->
+		<BlurFade delay={0.35}>
+			<header class="mb-12">
+				<h1 class="text-3xl font-bold mb-4">{project.title}</h1>
+				<p class="text-neutral-500 mb-6">{project.description}</p>
+				
+				<!-- Project Links -->
+				<div class="flex gap-4 mb-8">
+					{#if project.showWebsite}
+						<a href={project.website} target="_blank" rel="noopener noreferrer">
+							<Button variant="outline" class="gap-2">
+								<Icon icon="proicons:globe" class="h-5 w-5" />
+								Visit Website
+							</Button>
+						</a>
+					{/if}
+				</div>
+
+				<!-- Project Video -->
+				<div class="rounded-xl overflow-hidden shadow-lg">
+					<video
+						src={project.video}
+						autoplay
+						loop
+						muted
+						playsinline
+						class="w-full h-auto"
+					></video>
+				</div>
+			</header>
+		</BlurFade>
+
+		<!-- Project Details -->
+		<BlurFade delay={0.45}>
+			<div class="space-y-12">
+				<!-- Problem & Solution -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
+					<div class="space-y-4">
+						<div>
+							<h3 class="text-lg font-medium mb-2">The Problem</h3>
+							<p class="text-neutral-500">{project.problem}</p>
+						</div>
+						<div>
+							<h3 class="text-lg font-medium mb-2">The Solution</h3>
+							<p class="text-neutral-500">{project.solution}</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Key Features -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+					<ul class="list-disc list-inside space-y-2 text-neutral-500">
+						{#each project.features as feature}
+							<li>{feature}</li>
+						{/each}
+					</ul>
+				</section>
+
+				<!-- Challenges -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">Challenges</h2>
+					<ul class="list-disc list-inside space-y-2 text-neutral-500">
+						{#each project.challenges as challenge}
+							<li>{challenge}</li>
+						{/each}
+					</ul>
+				</section>
+
+				<!-- Technologies -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						{#each project.technologies as tech}
+							<div class="p-4 border rounded-lg">
+								<h3 class="font-medium mb-2">{tech.name}</h3>
+								<p class="text-neutral-500">{tech.description}</p>
+							</div>
+						{/each}
+					</div>
+				</section>
+			</div>
+		</BlurFade>
+	</div>
 </div>

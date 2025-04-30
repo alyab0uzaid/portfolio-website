@@ -23,7 +23,7 @@
 		showWebsite: false,
 		source: "https://github.com/alyab0uzaid/RabbitHole",
 		showSource: true,
-		caseStudy: "/casestudies/prepguide"
+		caseStudy: "/casestudies/rabbithole"
 	  },
 	  {
 		title: "PrepGuide.org",
@@ -170,7 +170,7 @@
 	  <section id="about" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">About Me</h2>
 			<p class="text-neutral-500 leading-relaxed">
-				Hi 👋 I’m Aly Abou-Zaid! Ever since I stumbled upon my first programming tutorial, I’ve been captivated by the endless possibilities of building things that not only work but also bring joy to people. Web development has been my gateway to merging my technical skills with my love for storytelling and design.
+				Hi 👋 I'm Aly Abou-Zaid! Ever since I stumbled upon my first programming tutorial, I've been captivated by the endless possibilities of building things that not only work but also bring joy to people. Web development has been my gateway to merging my technical skills with my love for storytelling and design.
 			</p>
 		  
 			<p class="mt-4 text-neutral-500 leading-relaxed">
