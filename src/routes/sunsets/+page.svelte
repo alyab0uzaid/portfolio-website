@@ -5,7 +5,8 @@
     import BlurFade from "$lib/BlurFade.svelte";
     import Button from "$lib/components/ui/button/button.svelte";
     import { toggleMode } from "mode-watcher";
-  
+    import type { VibrantPalette, VibrantInstance, VibrantConstructor } from "$lib/types/vibrant";
+
     // Define a type for sunset objects
     type Sunset = {
       src: string;
@@ -236,6 +237,51 @@
   
     // Define the selectedSunset as type Sunset or null
     let selectedSunset: Sunset | null = null;
+    let isLoadingPalette = false;
+
+    // Function to generate color palette from an image using Vibrant.js
+    async function generateColorPalette(imageUrl: string): Promise<string[]> {
+      try {
+        isLoadingPalette = true;
+        // Load Vibrant.js from CDN
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js';
+        document.head.appendChild(script);
+
+        await new Promise((resolve) => {
+          script.onload = resolve;
+        });
+
+        const vibrant = new window.Vibrant(imageUrl);
+        const palette = await vibrant.getPalette();
+        
+        // Extract the most vibrant colors from the palette
+        const colors = [
+          palette.Vibrant?.hex,
+          palette.Muted?.hex,
+          palette.DarkVibrant?.hex,
+          palette.LightVibrant?.hex,
+          palette.DarkMuted?.hex
+        ].filter(Boolean) as string[];
+        
+        return colors;
+      } catch (error) {
+        console.error('Error generating color palette:', error);
+        // Return a default palette if the generation fails
+        return ['#FF8C00', '#FFD700', '#FFB6C1', '#6495ED', '#FFFFFF'];
+      } finally {
+        isLoadingPalette = false;
+      }
+    }
+
+    // Update selectedSunset to include generated palette
+    async function handleSunsetSelect(sunset: Sunset) {
+      selectedSunset = sunset;
+      if (selectedSunset) {
+        const generatedPalette = await generateColorPalette(selectedSunset.src);
+        selectedSunset.palette = generatedPalette;
+      }
+    }
   </script>
   
 
@@ -283,7 +329,7 @@
       <section id="about" class="mb-8 fadeInUp-animation">
         <h2 class="text-2xl font-semibold mb-2">Aly's Sunset Archive</h2>
         <p class="text-neutral-500 leading-relaxed">
-          Sunsets are a reminder of nature’s fleeting beauty. Here’s a collection of my favorite ones I’ve snapped on my phone over the years.
+          Sunsets are a reminder of nature's fleeting beauty. Here's a collection of my favorite ones I've snapped on my phone over the years.
         </p>
       </section>
   
@@ -296,11 +342,11 @@
       tabindex="0"
       role="button"
       class={`relative overflow-hidden rounded-lg shadow hover:shadow-lg transition cursor-pointer ${pic.colSpan} ${pic.rowSpan}`}
-      on:click={() => (selectedSunset = pic)}
+      on:click={() => handleSunsetSelect(pic)}
       on:keydown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          selectedSunset = pic;
+          handleSunsetSelect(pic);
         }
       }}
     >
@@ -337,27 +383,64 @@
   </div>
   
   <!-- Modal -->
-  <!-- <Dialog.Root open={!!selectedSunset} onOpenChange={() => (selectedSunset = null)}>
-    <Dialog.Content
-      class="rounded-lg shadow-xl bg-white dark:bg-neutral-900 flex items-center justify-center p-0"
-      style="display: inline-block;"
-    >
+  <Dialog.Root open={!!selectedSunset} onOpenChange={() => (selectedSunset = null)}>
+    <Dialog.Content class="rounded-lg shadow-xl bg-white dark:bg-neutral-900 p-6 max-w-4xl">
       {#if selectedSunset}
-        <div
-          class={`relative rounded-lg overflow-hidden ${
-            selectedSunset.orientation === "portrait" ? "h-[450px] w-auto" : "h-auto w-[700px]"
-          }`}
-        >
-          <img
-            src={selectedSunset.src}
-            alt={selectedSunset.alt}
-            class="rounded-lg w-full h-full object-contain"
-          />
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Image Section -->
+          <div class="flex-1">
+            <img
+              src={selectedSunset.src}
+              alt={selectedSunset.alt}
+              class="w-full h-auto rounded-lg object-cover"
+            />
+          </div>
+
+          <!-- Info Section -->
+          <div class="flex-1 space-y-4">
+            <div>
+              <h2 class="text-2xl font-bold">{selectedSunset.location}</h2>
+              <p class="text-neutral-500">{selectedSunset.date}</p>
+            </div>
+
+            <p class="text-neutral-700 dark:text-neutral-300">
+              {selectedSunset.description}
+            </p>
+
+            <!-- Color Palette -->
+            <div class="space-y-2">
+              <h3 class="font-medium">Color Palette</h3>
+              {#if isLoadingPalette}
+                <div class="flex items-center space-x-2">
+                  <div class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 animate-pulse"></div>
+                  <div class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 animate-pulse"></div>
+                  <div class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 animate-pulse"></div>
+                  <div class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 animate-pulse"></div>
+                  <div class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-700 animate-pulse"></div>
+                </div>
+              {:else}
+                <div class="flex flex-wrap gap-2">
+                  {#each selectedSunset.palette as color}
+                    <div
+                      class="w-8 h-8 rounded-full shadow-md transition-transform hover:scale-110"
+                      style="background-color: {color}"
+                      title={color}
+                    ></div>
+                  {/each}
+                </div>
+              {/if}
+            </div>
+          </div>
         </div>
+
+        <!-- Close Button -->
+        <Dialog.Close class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+          <Icon icon="mdi:close" class="h-4 w-4" />
+          <span class="sr-only">Close</span>
+        </Dialog.Close>
       {/if}
     </Dialog.Content>
   </Dialog.Root>
-   -->
   
   
 

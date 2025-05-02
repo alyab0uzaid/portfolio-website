@@ -57,6 +57,7 @@
 		"lottie": "^0.0.1",
 		"lottie-web": "^5.12.2",
 		"mode-watcher": "^0.5.0",
+		"node-vibrant": "^4.0.3",
 		"svelte-inview": "^4.0.4",
 		"svelte-motion": "^0.12.2",
 		"tocbot": "^4.30.0"
