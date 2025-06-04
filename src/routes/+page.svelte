@@ -17,7 +17,7 @@
 		date: "March 2025",
 		description:
 		  "A Chrome extension that integrates Wikipedia content and visualizes your exploration journey across webpages.",
-		video: "/rabbitholetest.mp4",
+		video: "/rabbitholedemo.mp4",
 		badges: ["JavaScript", "HTML", "CSS", "GoJS","Chrome Extension API", "Wikipedia API"],
 		website: "",
 		showWebsite: false,
@@ -63,18 +63,6 @@
 		source: "#",
 		showSource: true,
 		caseStudy: "/casestudies/zoo"
-	  },
-	  {
-		title: "Portfolio Website",
-		date: "April 2024",
-		description: "This website!",
-		image: "/images/portfoliodemov3.png",
-		badges: ["SvelteKit", "TailwindCSS", "Cloudflare Pages"],
-		website: "https://alyabouzaid.com",
-		showWebsite: true,
-		source: "https://github.com/alyab0uzaid/portfolio-website",
-		showSource: true,
-		caseStudy: "/casestudies/portfolio"
 	  },
 	];
   </script>
