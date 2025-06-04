@@ -17,7 +17,7 @@
 		date: "March 2025",
 		description:
 		  "A Chrome extension that integrates Wikipedia content and visualizes your exploration journey across webpages.",
-		video: "/rabbitholedemo.mp4",
+		video: "/PrepGuideDemov2.mov",
 		badges: ["JavaScript", "HTML", "CSS", "GoJS","Chrome Extension API", "Wikipedia API"],
 		website: "",
 		showWebsite: false,
