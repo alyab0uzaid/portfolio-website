@@ -73,7 +73,8 @@
 		description: "A feel-good Thanksgiving street interview video capturing students' responses about what they're thankful for. Filmed at SIUE with quick cuts and cozy campus vibes.",
 		video: "Q1fgyZ5Dl0A",
 		website: "https://youtu.be/Q1fgyZ5Dl0A",
-		showWebsite: true
+		showWebsite: true,
+		caseStudy: "/casestudies/thankful"
 	  },
 	  {
 		title: "SIUE Newsbreak",
@@ -81,7 +82,8 @@
 		description: "A parody news segment delivering fake campus updates with deadpan delivery. Think The Onion, but SIUE-flavored. Handled on-camera anchoring, scriptwriting, and editing.",
 		video: "Jz45kRU-4Rg",
 		website: "https://youtu.be/Jz45kRU-4Rg",
-		showWebsite: true
+		showWebsite: true,
+		caseStudy: "/casestudies/newsbreak"
 	  }
 	];
 
@@ -345,7 +347,7 @@
 			<!-- Cards Grid -->
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 				{#each creativeProjects as project}
-				<a href={project.website} target="_blank" rel="noopener noreferrer" class="group">
+				<a href={project.caseStudy} class="group">
 					<Card.Root class="flex flex-col h-[420px] border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out overflow-hidden">
 						<!-- Thumbnail with Play Button Overlay -->
 						<div class="relative">
