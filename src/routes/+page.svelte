@@ -10,6 +10,17 @@
 	import Dock from "$lib/components/ui/dock/Dock.svelte";
 	import DockIcon from "$lib/components/ui/dock/Dockicon.svelte"
   
+	interface CreativeProject {
+		title: string;
+		date: string;
+		description: string;
+		video?: string;
+		image?: string;
+		website: string;
+		showWebsite: boolean;
+		caseStudy: string;
+	}
+
 	// projects data
 	const developmentProjects = [
 		{
@@ -66,8 +77,17 @@
 	  },
 	];
 
-	const creativeProjects = [
+	const creativeProjects: CreativeProject[] = [
 		{
+		title: "Zain Motors Stat Reels",
+		date: "2024",
+		description: "Short-form vertical videos showcasing car listings with fast specs and visuals. I created TikTok-style reels for Zain Motors, combining sleek footage, bold text animations, and quickfire stats (price, horsepower, MPG, etc.) to make used car listings feel modern and scroll-stopping.",
+		video: "/zainreel.mp4",
+		website: "https://www.instagram.com/p/DD0VQvRJ8Ev/",
+		showWebsite: true,
+		caseStudy: "/casestudies/zainmotors"
+	  },
+	  {
 		title: "What Are You Thankful For?",
 		date: "November 2023",
 		description: "A feel-good Thanksgiving street interview video capturing students' responses about what they're thankful for. Filmed at SIUE with quick cuts and cozy campus vibes.",
@@ -96,7 +116,8 @@
 	  }
 	];
 
-	function handleImgError(event: Event, videoId: string) {
+	function handleImgError(event: Event, videoId: string | undefined) {
+		if (!videoId) return;
 		const img = event.target as HTMLImageElement;
 		img.onerror = null;
 		img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
@@ -359,20 +380,44 @@
 				<a href={project.caseStudy} class="group">
 					<Card.Root class="flex flex-col h-96 border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out overflow-hidden">
 						<!-- Thumbnail -->
-						<div class="relative rounded-t-xl overflow-hidden">
-							<img
-								src={project.video === 'Q1fgyZ5Dl0A'
-									? `https://img.youtube.com/vi/${project.video}/hqdefault.jpg`
-									: `https://img.youtube.com/vi/${project.video}/maxresdefault.jpg`}
-								alt={project.title}
-								class="w-full h-40 object-cover"
-								on:error={(e) => handleImgError(e, project.video)}
-							/>
-							<div class="absolute inset-0 flex items-center justify-center">
-								<div class="w-12 h-12 rounded-full bg-white bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-									<Icon icon="mdi:play" class="w-6 h-6 text-black" />
-								</div>
-							</div>
+						<div class="relative overflow-hidden">
+							{#if project.video}
+								{#if project.video.startsWith('http') || project.video.length === 11}
+									<img
+										src={project.video === 'Q1fgyZ5Dl0A'
+											? `https://img.youtube.com/vi/${project.video}/hqdefault.jpg`
+											: `https://img.youtube.com/vi/${project.video}/maxresdefault.jpg`}
+										alt={project.title}
+										class="w-full h-40 object-cover"
+										on:error={(e) => handleImgError(e, project.video)}
+									/>
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div class="w-12 h-12 rounded-full bg-white bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+											<Icon icon="mdi:play" class="w-6 h-6 text-black" />
+										</div>
+									</div>
+								{:else}
+									<video
+										src={project.video}
+										autoplay
+										loop
+										muted
+										playsinline
+										class="w-full h-40 object-cover"
+									></video>
+									<div class="absolute inset-0 flex items-center justify-center">
+										<div class="w-12 h-12 rounded-full bg-white bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+											<Icon icon="mdi:instagram" class="w-6 h-6 text-black" />
+										</div>
+									</div>
+								{/if}
+							{:else}
+								<img
+									src={project.image}
+									alt={project.title}
+									class="w-full h-40 object-cover"
+								/>
+							{/if}
 						</div>
 						<!-- Card Content -->
 						<div class="flex flex-col flex-1 p-3 pt-2">
