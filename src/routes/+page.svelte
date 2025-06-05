@@ -17,7 +17,7 @@
 		date: "March 2025",
 		description:
 		  "A Chrome extension that integrates Wikipedia content and visualizes your exploration journey across webpages.",
-		video: "/rabbitholedemo.mp4",
+		image: "/images/rabbitholecover.png",
 		badges: ["JavaScript", "HTML", "CSS", "GoJS","Chrome Extension API", "Wikipedia API"],
 		website: "",
 		showWebsite: false,
@@ -214,8 +214,18 @@
 	  <!-- Projects Section -->
 	  <BlurFade delay={0.55}>
 	  <section id="projects" class="fadeInUp-animation">
-		<h2 class="text-xl font-semibold mb-2">Projects</h2>
-  
+		<!-- Custom Project Header -->
+		<div class="flex flex-col items-center text-center mb-12">
+		  <span class="bg-black text-white rounded-md px-4 py-1 mb-4 text-sm font-light ">
+			My Projects
+		  </span>
+		  <h2 class="text-5xl font-bold mb-4">
+			Check out my latest work
+		  </h2>
+		  <p class="text-gray-500 text-lg max-w-2xl">
+			I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.
+		  </p>
+		</div>
 		<!-- Cards Grid -->
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
