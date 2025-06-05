@@ -84,6 +84,15 @@
 		website: "https://youtu.be/Jz45kRU-4Rg",
 		showWebsite: true,
 		caseStudy: "/casestudies/newsbreak"
+	  },
+	  {
+		title: "Larkin-Barrett Campaign Promo",
+		date: "2024",
+		description: "A fast-paced campaign ad for the 2024 SIUE Student Government presidential ticket. Shot and edited to highlight the energy, goals, and vision of Larkin and Barrett's campaign, blending cinematic shots with bold text overlays and upbeat music to rally student support.",
+		video: "6GFKxsfkVMc",
+		website: "https://youtu.be/6GFKxsfkVMc",
+		showWebsite: true,
+		caseStudy: "/casestudies/larkinbarrett"
 	  }
 	];
 
@@ -348,34 +357,29 @@
 			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 				{#each creativeProjects as project}
 				<a href={project.caseStudy} class="group">
-					<Card.Root class="flex flex-col h-[420px] border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out overflow-hidden">
-						<!-- Thumbnail with Play Button Overlay -->
-						<div class="relative">
+					<Card.Root class="flex flex-col h-96 border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out overflow-hidden">
+						<!-- Thumbnail -->
+						<div class="relative rounded-t-xl overflow-hidden">
 							<img
 								src={project.video === 'Q1fgyZ5Dl0A'
 									? `https://img.youtube.com/vi/${project.video}/hqdefault.jpg`
 									: `https://img.youtube.com/vi/${project.video}/maxresdefault.jpg`}
 								alt={project.title}
-								class="w-full h-48 object-cover"
+								class="w-full h-40 object-cover"
 								on:error={(e) => handleImgError(e, project.video)}
 							/>
-							<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
-								<div class="w-16 h-16 rounded-full bg-white bg-opacity-90 flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-200">
-									<Icon icon="mdi:play" class="w-8 h-8 text-black" />
+							<div class="absolute inset-0 flex items-center justify-center">
+								<div class="w-12 h-12 rounded-full bg-white bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+									<Icon icon="mdi:play" class="w-6 h-6 text-black" />
 								</div>
 							</div>
 						</div>
-					
-						<!-- Title and Description -->
-						<Card.Header class="flex-grow p-6">
-							<Card.Title class="text-xl mb-2">{project.title}</Card.Title>
-							<Card.Description class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
-								{project.date}
-							</Card.Description>
-							<Card.Description class="text-sm leading-relaxed">
-								{project.description}
-							</Card.Description>
-						</Card.Header>
+						<!-- Card Content -->
+						<div class="flex flex-col flex-1 p-3 pt-2">
+							<div class="font-bold text-lg mb-1">{project.title}</div>
+							<div class="text-xs text-black dark:text-white mb-1">{project.date}</div>
+							<div class="text-xs text-neutral-700 dark:text-neutral-300">{project.description}</div>
+						</div>
 					</Card.Root>
 				</a>
 				{/each}
