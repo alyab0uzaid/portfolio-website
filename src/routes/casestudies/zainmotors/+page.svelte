@@ -60,19 +60,25 @@ const project = {
 						</a>
 					{/if}
 				</div>
-				<!-- Project Image -->
-				<div class="rounded-xl overflow-hidden shadow-lg">
-					<img
-						src={project.image}
-						alt={project.title}
-						class="w-full h-auto"
-					/>
-				</div>
 			</header>
 		</BlurFade>
 
 		<BlurFade delay={0.45}>
 			<div class="space-y-12">
+				<!-- Project Video -->
+				<div class="w-full max-w-[300px] mx-auto mb-12 rounded-xl overflow-hidden shadow-lg">
+					<video
+						src="/zainreel.mp4"
+						controls
+						autoplay
+						loop
+						muted
+						playsinline
+						class="w-full"
+						preload="auto"
+					></video>
+				</div>
+
 				<!-- Problem & Solution -->
 				<section>
 					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>

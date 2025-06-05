@@ -255,17 +255,19 @@
 	  <BlurFade delay={0.45}>
 	  <section id="skills" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">Skills</h2>
-		<Badge class="mb-1 dark:bg-neutral-300">HTML</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300" >CSS</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">JavaScript</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">SvelteKit</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">Illustrator</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">Premier Pro</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">After Effects</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">Photoshop</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">Figma</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">Webflow</Badge>
-		<Badge class="mb-1 dark:bg-neutral-300">Eating</Badge>
+		<div class="flex flex-wrap gap-2">
+			<BlurFade delay={0.5}><Badge class="dark:bg-neutral-300">HTML</Badge></BlurFade>
+			<BlurFade delay={0.55}><Badge class="dark:bg-neutral-300">CSS</Badge></BlurFade>
+			<BlurFade delay={0.6}><Badge class="dark:bg-neutral-300">JavaScript</Badge></BlurFade>
+			<BlurFade delay={0.65}><Badge class="dark:bg-neutral-300">SvelteKit</Badge></BlurFade>
+			<BlurFade delay={0.7}><Badge class="dark:bg-neutral-300">Illustrator</Badge></BlurFade>
+			<BlurFade delay={0.75}><Badge class="dark:bg-neutral-300">Premier Pro</Badge></BlurFade>
+			<BlurFade delay={0.8}><Badge class="dark:bg-neutral-300">After Effects</Badge></BlurFade>
+			<BlurFade delay={0.85}><Badge class="dark:bg-neutral-300">Photoshop</Badge></BlurFade>
+			<BlurFade delay={0.9}><Badge class="dark:bg-neutral-300">Figma</Badge></BlurFade>
+			<BlurFade delay={0.95}><Badge class="dark:bg-neutral-300">Webflow</Badge></BlurFade>
+			<BlurFade delay={1.0}><Badge class="dark:bg-neutral-300">Eating</Badge></BlurFade>
+		</div>
 	  </section>
 	  </BlurFade>
 	  
