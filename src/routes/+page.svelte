@@ -11,7 +11,7 @@
 	import DockIcon from "$lib/components/ui/dock/Dockicon.svelte"
   
 	// projects data
-	const projects = [
+	const developmentProjects = [
 		{
 		title: "RabbitHole Chrome Extension",
 		date: "March 2025",
@@ -65,7 +65,32 @@
 		caseStudy: "/casestudies/zoo"
 	  },
 	];
-  </script>
+
+	const creativeProjects = [
+		{
+		title: "What Are You Thankful For?",
+		date: "November 2023",
+		description: "A feel-good Thanksgiving street interview video capturing students' responses about what they're thankful for. Filmed at SIUE with quick cuts and cozy campus vibes.",
+		video: "Q1fgyZ5Dl0A",
+		website: "https://youtu.be/Q1fgyZ5Dl0A",
+		showWebsite: true
+	  },
+	  {
+		title: "SIUE Newsbreak",
+		date: "2023",
+		description: "A parody news segment delivering fake campus updates with deadpan delivery. Think The Onion, but SIUE-flavored. Handled on-camera anchoring, scriptwriting, and editing.",
+		video: "Jz45kRU-4Rg",
+		website: "https://youtu.be/Jz45kRU-4Rg",
+		showWebsite: true
+	  }
+	];
+
+	function handleImgError(event: Event, videoId: string) {
+		const img = event.target as HTMLImageElement;
+		img.onerror = null;
+		img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+	}
+</script>
   
 
   
@@ -214,94 +239,146 @@
 	  <!-- Projects Section -->
 	  <BlurFade delay={0.55}>
 	  <section id="projects" class="fadeInUp-animation">
-		<!-- Custom Project Header -->
-		<div class="flex flex-col items-center text-center mb-12">
-		  <span class="bg-black text-white rounded-md px-4 py-1 mb-4 text-sm font-light ">
-			My Projects
-		  </span>
-		  <h2 class="text-5xl font-bold mb-4">
-			Check out my latest work
-		  </h2>
-		  <p class="text-gray-500 text-lg max-w-2xl">
-			I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.
-		  </p>
+		<!-- Development Projects -->
+		<div class="mb-16">
+			<!-- Custom Project Header -->
+			<div class="flex flex-col items-center text-center mb-12">
+				<span class="bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black rounded-md px-4 py-1 mb-4 text-sm font-light">
+					Development Projects
+				</span>
+				<h2 class="text-5xl font-bold mb-4">
+					Check out my latest work
+				</h2>
+				<p class="text-gray-500 text-lg max-w-2xl">
+					I've worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.
+				</p>
+			</div>
+			<!-- Cards Grid -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+				{#each developmentProjects as project}
+				<a href={project.caseStudy}>
+					<Card.Root class="flex flex-col h-96 border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
+						<!-- Video or Image -->
+						<Card.Content class="p-0">
+							{#if project.video}
+								<!-- Video Container -->
+								<video
+									src={project.video}
+									autoplay
+									loop
+									muted
+									playsinline
+									class="rounded-t-xl h-40 w-full object-cover"
+								></video>
+							{:else}
+								<!-- Static Image -->
+								<img
+									src={project.image}
+									alt="{project.title}"
+									class="rounded-t-xl h-40 w-full object-cover"
+								/>
+							{/if}
+						</Card.Content>
+					
+						<!-- Title and Description -->
+						<Card.Header class="flex-grow p-3 pt-2">
+							<Card.Title>{project.title}</Card.Title>
+							<Card.Description class="text-xs text-black dark:text-white">
+								{project.date}
+							</Card.Description>
+							<Card.Description class="text-xs">{project.description}</Card.Description>
+						</Card.Header>
+					
+						<!-- Badges and Footer -->
+						<div class="mt-auto p-3">
+							<!-- Badges -->
+							<div class="mb-3 text-neutral-900 dark:text-neutral-100 text-xs font-medium flex gap-2 flex-wrap">
+								{#each project.badges as badge}
+									<span class="bg-neutral-100 dark:bg-neutral-900 rounded p-1">
+										{badge}
+									</span>
+								{/each}
+							</div>
+					
+							<!-- Footer with Buttons -->
+							<div class="flex gap-2 justify-start">
+								{#if project.showWebsite}
+									<button
+										class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
+										on:click={() => window.open(project.website, "_blank")}
+									>
+										<Icon icon="proicons:globe" class="mr-2 h-4 w-4" />
+										Website
+									</button>
+								{/if}
+								{#if project.showSource}
+									<button
+										class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
+										on:click={() => window.open(project.source, "_blank")}
+									>
+										<Icon icon="mdi:github" class="mr-2 h-4 w-4" />
+										Source
+									</button>
+								{/if}
+							</div>
+						</div>
+					</Card.Root>
+				</a>
+				{/each}
+			</div>
 		</div>
-		<!-- Cards Grid -->
-		<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
-			{#each projects as project}
-			<a href={project.caseStudy}>
-			  <Card.Root class="flex flex-col h-96  border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out  ">
-				<!-- Video or Image -->
-				<Card.Content class="p-0">
-				  {#if project.video}
-					<!-- Video Container -->
-					<video
-					  src={project.video}
-					  autoplay
-					  loop
-					  muted
-					  playsinline
-					  class="rounded-t-xl h-40 w-full object-cover"
-					></video>
-				  {:else}
-					<!-- Static Image -->
-					<img
-					  src={project.image}
-					  alt="{project.title}"
-					  class="rounded-t-xl h-40 w-full object-cover"
-					/>
-				  {/if}
-				</Card.Content>
-		  
-				<!-- Title and Description -->
-				<Card.Header class="flex-grow p-3 pt-2">
-				  <Card.Title>{project.title}</Card.Title>
-				  <Card.Description class="text-xs text-black dark:text-white">
-					{project.date}
-				  </Card.Description>
-				  <Card.Description class="text-xs">{project.description}</Card.Description>
-				</Card.Header>
-		  
-				<!-- Badges and Footer -->
-				<div class="mt-auto p-3">
-				  <!-- Badges -->
-				  <div class="mb-3 text-neutral-900 dark:text-neutral-100 text-xs font-medium flex gap-2 flex-wrap">
-					{#each project.badges as badge}
-					  <span class="bg-neutral-100 dark:bg-neutral-900 rounded p-1">
-						{badge}
-					  </span>
-					{/each}
-				  </div>
-		  
-				  <!-- Footer with Buttons -->
-				  <div class="flex gap-2 justify-start">
-					{#if project.showWebsite}
-					  <button
-						class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
-						on:click={() => window.open(project.website, "_blank")}
-					  >
-						<Icon icon="proicons:globe" class="mr-2 h-4 w-4" />
-						Website
-					  </button>
-					{/if}
-					{#if project.showSource}
-					  <button
-						class="text-xs flex items-center px-3 py-1 bg-black hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black rounded-md shadow-sm transition duration-200"
-						on:click={() => window.open(project.source, "_blank")}
-					  >
-						<Icon icon="mdi:github" class="mr-2 h-4 w-4" />
-						Source
-					  </button>
-					{/if}
-				  </div>
-				</div>
-			  </Card.Root>
-			</a>
-			{/each}
-
-		  </div>  
-		
+		<!-- Creative Projects -->
+		<div>
+			<!-- Custom Project Header -->
+			<div class="flex flex-col items-center text-center mb-12">
+				<span class="bg-neutral-900 dark:bg-neutral-100 text-white dark:text-black rounded-md px-4 py-1 mb-4 text-sm font-light">
+					Creative Projects
+				</span>
+				<h2 class="text-5xl font-bold mb-4">
+					Video Production Work
+				</h2>
+				<p class="text-gray-500 text-lg max-w-2xl">
+					Explore my creative journey through video production and motion graphics.
+				</p>
+			</div>
+			<!-- Cards Grid -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+				{#each creativeProjects as project}
+				<a href={project.website} target="_blank" rel="noopener noreferrer" class="group">
+					<Card.Root class="flex flex-col h-[420px] border hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out overflow-hidden">
+						<!-- Thumbnail with Play Button Overlay -->
+						<div class="relative">
+							<img
+								src={project.video === 'Q1fgyZ5Dl0A'
+									? `https://img.youtube.com/vi/${project.video}/hqdefault.jpg`
+									: `https://img.youtube.com/vi/${project.video}/maxresdefault.jpg`}
+								alt={project.title}
+								class="w-full h-48 object-cover"
+								on:error={(e) => handleImgError(e, project.video)}
+							/>
+							<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
+								<div class="w-16 h-16 rounded-full bg-white bg-opacity-90 flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-200">
+									<Icon icon="mdi:play" class="w-8 h-8 text-black" />
+								</div>
+							</div>
+						</div>
+					
+						<!-- Title and Description -->
+						<Card.Header class="flex-grow p-6">
+							<Card.Title class="text-xl mb-2">{project.title}</Card.Title>
+							<Card.Description class="text-sm text-neutral-500 dark:text-neutral-400 mb-3">
+								{project.date}
+							</Card.Description>
+							<Card.Description class="text-sm leading-relaxed">
+								{project.description}
+							</Card.Description>
+						</Card.Header>
+					</Card.Root>
+				</a>
+				{/each}
+			</div>
+		</div>
 	  </section>
 	  </BlurFade>
 	</div>
