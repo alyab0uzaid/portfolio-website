@@ -7,42 +7,44 @@
 	const project = {
 		title: "RabbitHole Chrome Extension",
 		date: "March 2025",
-		description: "A Chrome extension that integrates Wikipedia content and visualizes your exploration journey across webpages.",
+		description: "A Chrome extension that transforms Wikipedia exploration into an elegant, visual journey by creating an interactive flowchart of your research path.",
 		video: "eXI9RPzCBlo",
-		badges: ["JavaScript", "HTML", "CSS", "GoJS", "Chrome Extension API", "Wikipedia API"],
+		badges: ["JavaScript", "HTML", "CSS", "Chrome Extension API", "Wikipedia API", "Dictionary.com API"],
 		source: "https://github.com/alyab0uzaid/RabbitHole",
 		showSource: true,
-		problem: "While browsing the web, users often find themselves going down 'rabbit holes' of information, jumping from one Wikipedia article to another. However, there's no easy way to visualize or track these exploration journeys.",
-		solution: "RabbitHole is a Chrome extension that automatically detects Wikipedia articles and creates an interactive visualization of your browsing journey. It helps users understand their information exploration patterns and discover new connections between topics.",
+		problem: "During research, users often find themselves juggling 20+ browser tabs while exploring Wikipedia, losing track of how they got from one topic to another. This scattered tab explosion makes it difficult to maintain context and understand connections between topics.",
+		solution: "RabbitHole transforms this chaotic exploration into an elegant, visual journey. By creating an interactive flowchart that maps connections between topics, we've eliminated tab overload while preserving the joy of discovery. The extension visualizes your exploration path, making research not just more efficient, but more meaningful as you see the connections between ideas.",
 		features: [
-			"Real-time visualization of Wikipedia article connections",
-			"Interactive graph showing your browsing history",
-			"Automatic detection of Wikipedia articles",
-			"Customizable visualization settings",
-			"Export functionality for sharing your exploration journey"
+			"Interactive flowchart visualization of Wikipedia exploration",
+			"Text highlighting to fetch relevant Wikipedia information",
+			"Expandable/collapsible nodes with toggle buttons",
+			"Clean visual connections showing topic relationships",
+			"Seamless overlay on any webpage",
+			"Integration with Wikipedia and Dictionary.com APIs"
 		],
 		challenges: [
-			"Implementing real-time graph updates without performance issues",
-			"Handling Wikipedia API rate limits",
-			"Creating an intuitive user interface for complex data visualization",
-			"Ensuring smooth integration with Chrome's extension system"
+			"Implementing the interactive knowledge map with correct rendering",
+			"Managing expand/collapse functionality for subtrees",
+			"Fixing connection lines between nodes",
+			"Handling complex DOM manipulation and state management",
+			"Ensuring dynamic updates as users explore new topics"
 		],
 		technologies: [
 			{
 				name: "JavaScript",
-				description: "Core programming language for the extension"
-			},
-			{
-				name: "GoJS",
-				description: "Interactive graph visualization library"
+				description: "Core programming language for the extension and interactive features"
 			},
 			{
 				name: "Chrome Extension API",
-				description: "For browser integration and functionality"
+				description: "For browser integration and extension functionality"
 			},
 			{
 				name: "Wikipedia API",
-				description: "For fetching article data and connections"
+				description: "For fetching article data and content"
+			},
+			{
+				name: "Dictionary.com API",
+				description: "For additional context and definitions"
 			}
 		]
 	};
