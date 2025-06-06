@@ -6,6 +6,21 @@
 	import BlurFade from "$lib/BlurFade.svelte";
 	import { cn } from "$lib/utils";
 	import AnimatedGradientText from "$lib/AnimatedGradientText.svelte";
+	import { toggleMode } from "mode-watcher";
+
+	// Creative case studies in order
+	const creativeCaseStudies = [
+		"/casestudies/zainmotors",
+		"/casestudies/thankful",
+		"/casestudies/newsbreak",
+		"/casestudies/larkinbarrett"
+	];
+
+	// Get current index and calculate prev/next
+	const currentPath = "/casestudies/larkinbarrett";
+	const currentIndex = creativeCaseStudies.indexOf(currentPath);
+	const prevCaseStudy = currentIndex > 0 ? creativeCaseStudies[currentIndex - 1] : null;
+	const nextCaseStudy = currentIndex < creativeCaseStudies.length - 1 ? creativeCaseStudies[currentIndex + 1] : null;
 
 	const project = {
 		title: "Larkin-Barrett Campaign Promo",
@@ -45,13 +60,27 @@
 <div class="flex justify-center items-start min-h-screen">
 	<!-- Single Column Wrapper -->
 	<div class="w-full max-w-4xl px-6 sm:px-6 py-20">
-		<!-- Back Button -->
+		<!-- Navigation -->
 		<BlurFade delay={0.25}>
-			<div class="mb-8">
+			<div class="flex justify-between items-center mb-8">
 				<a href="/" class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition">
 					<Icon icon="mdi:arrow-left" class="h-6 w-6 inline-block mr-2" />
 					Back to Home
 				</a>
+				<div class="flex gap-6">
+					{#if prevCaseStudy}
+						<a href={prevCaseStudy} class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition flex items-center">
+							<Icon icon="mdi:arrow-left" class="h-5 w-5 mr-1" />
+							<span>prev</span>
+						</a>
+					{/if}
+					{#if nextCaseStudy}
+						<a href={nextCaseStudy} class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition flex items-center">
+							<span>next</span>
+							<Icon icon="mdi:arrow-right" class="h-5 w-5 ml-1" />
+						</a>
+					{/if}
+				</div>
 			</div>
 		</BlurFade>
 
