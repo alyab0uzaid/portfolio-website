@@ -7,45 +7,43 @@
 	const project = {
 		title: "RabbitHole Chrome Extension",
 		date: "March 2025",
-		description: "A Chrome extension that transforms Wikipedia exploration into an elegant, visual journey by creating an interactive flowchart of your research path. Built in 48 hours at eHacks, where it won first place! 🏆",
+		description: "Wikipedia, without the chaos. A Chrome extension that transforms Wikipedia exploration into a visual journey, showing you where you've been, how topics connect, and what to explore next.",
 		video: "eXI9RPzCBlo",
 		badges: ["JavaScript", "HTML", "CSS", "Chrome Extension API", "Wikipedia API", "Dictionary.com API", "48-Hour Hackathon", "First Place Winner"],
 		source: "https://github.com/alyab0uzaid/RabbitHole",
 		showSource: true,
-		problem: "During research, users often find themselves juggling 20+ browser tabs while exploring Wikipedia, losing track of how they got from one topic to another. This scattered tab explosion makes it difficult to maintain context and understand connections between topics.",
-		solution: "RabbitHole transforms this chaotic exploration into an elegant, visual journey. By creating an interactive flowchart that maps connections between topics, we've eliminated tab overload while preserving the joy of discovery. The extension visualizes your exploration path, making research not just more efficient, but more meaningful as you see the connections between ideas.",
+		problem: "Wikipedia is great, until you have 25 tabs open and forget how you got from black holes to Byzantine architecture. Most people explore instinctively but lose track of their path. There's no built-in way to follow your thought process or connect ideas across pages.",
+		solution: "Make curiosity visible. RabbitHole is a Chrome extension that builds a visual flowchart of your research. Every page, every link you follow, gets mapped, so your Wikipedia spiral becomes a guided, interactive journey. It's like seeing your brain explore in real time.",
 		features: [
-			"Interactive flowchart visualization of Wikipedia exploration",
-			"Text highlighting to fetch relevant Wikipedia information",
-			"Expandable/collapsible nodes with toggle buttons",
-			"Clean visual connections showing topic relationships",
-			"Seamless overlay on any webpage",
-			"Integration with Wikipedia and Dictionary.com APIs"
+			"Auto-maps your exploration as you browse",
+			"Highlights and previews Wikipedia content without leaving the page",
+			"Expands/collapses nodes to keep things clean",
+			"Seamlessly overlays on top of any site",
+			"Works with Wikipedia and Dictionary.com"
 		],
 		challenges: [
-			"Implementing the interactive knowledge map with correct rendering",
-			"Managing expand/collapse functionality for subtrees",
-			"Fixing connection lines between nodes",
-			"Handling complex DOM manipulation and state management",
-			"Ensuring dynamic updates as users explore new topics",
-			"Completing the entire project within the 48-hour hackathon timeframe"
+			"Making the interactive map render correctly as nodes branch",
+			"Handling expand/collapse trees without breaking context",
+			"Managing real-time updates as users explore",
+			"Connecting nodes intelligently",
+			"Doing all of this in 2 days without sleep"
 		],
 		technologies: [
 			{
 				name: "JavaScript",
-				description: "Core programming language for the extension and interactive features"
+				description: "Core logic and frontend behavior"
 			},
 			{
 				name: "Chrome Extension API",
-				description: "For browser integration and extension functionality"
+				description: "Injecting UI into webpages and handling tabs"
 			},
 			{
 				name: "Wikipedia API",
-				description: "For fetching article data and content"
+				description: "Pulling article data and page content"
 			},
 			{
 				name: "Dictionary.com API",
-				description: "For additional context and definitions"
+				description: "Supplementary definitions and context"
 			}
 		]
 	};
@@ -101,12 +99,10 @@
 			<div class="space-y-12">
 				<!-- Hackathon Achievement -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Hackathon Success</h2>
+					<h2 class="text-2xl font-semibold mb-4">The Journey</h2>
 					<div class="space-y-4">
 						<p class="text-neutral-500">
-							RabbitHole was born during eHacks, a 48-hour hackathon that pushed us to think fast and build faster. 
-							Despite the time constraints, we managed to create a fully functional Chrome extension that impressed the judges 
-							and took home first place! 🏆
+							Built in 48 hours at eHacks, RabbitHole took first place out of 20+ teams. The hackathon pushed us to think fast, code smarter, and execute under pressure.
 						</p>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 							<div class="rounded-xl overflow-hidden shadow-lg">
@@ -132,32 +128,50 @@
 
 				<!-- Problem & Solution -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
+					<h2 class="text-2xl font-semibold mb-4">The Problem</h2>
 					<div class="space-y-4">
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Problem</h3>
-							<p class="text-neutral-500">{project.problem}</p>
-						</div>
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Solution</h3>
-							<p class="text-neutral-500">{project.solution}</p>
-						</div>
+						<p class="text-neutral-500">{project.problem}</p>
 					</div>
 				</section>
 
-				<!-- Key Features -->
+				<!-- The Idea -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+					<h2 class="text-2xl font-semibold mb-4">The Idea</h2>
+					<div class="space-y-4">
+						<p class="text-neutral-500">{project.solution}</p>
+					</div>
+				</section>
+
+				<!-- What It Does -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">What It Does</h2>
 					<ul class="list-disc list-inside space-y-2 text-neutral-500">
 						{#each project.features as feature}
 							<li>{feature}</li>
 						{/each}
 					</ul>
+					<p class="mt-4 text-neutral-500">The more you click, the clearer your journey becomes.</p>
+				</section>
+
+				<!-- My Role -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">My Role</h2>
+					<p class="text-neutral-500 mb-4">
+						I designed and built the entire experience alongside my hackathon team — from concept to final code in under 48 hours.
+					</p>
+					<p class="text-neutral-500 font-medium mb-2">I focused on:</p>
+					<ul class="list-disc list-inside space-y-2 text-neutral-500">
+						<li>Flowchart rendering logic</li>
+						<li>Text highlighting + popups</li>
+						<li>DOM injection and cleanup</li>
+						<li>Node path logic + state management</li>
+						<li>UI design and polish</li>
+					</ul>
 				</section>
 
 				<!-- Challenges -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Challenges</h2>
+					<h2 class="text-2xl font-semibold mb-4">Real Challenges</h2>
 					<ul class="list-disc list-inside space-y-2 text-neutral-500">
 						{#each project.challenges as challenge}
 							<li>{challenge}</li>
@@ -165,9 +179,20 @@
 					</ul>
 				</section>
 
+				<!-- Results -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">What Happened</h2>
+					<ul class="list-disc list-inside space-y-2 text-neutral-500">
+						<li>Won First Place at eHacks</li>
+						<li>Fully working Chrome extension demoed live</li>
+						<li>Judges praised its polish, ambition, and usefulness</li>
+						<li>Pushed us to think fast, code smarter, and execute under pressure</li>
+					</ul>
+				</section>
+
 				<!-- Technologies -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
+					<h2 class="text-2xl font-semibold mb-4">Tech Stack</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 						{#each project.technologies as tech}
 							<div class="p-4 border rounded-lg">
