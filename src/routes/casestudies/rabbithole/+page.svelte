@@ -8,7 +8,7 @@
 		title: "RabbitHole Chrome Extension",
 		date: "March 2025",
 		description: "A Chrome extension that integrates Wikipedia content and visualizes your exploration journey across webpages.",
-		video: "/rabbitholetest.mp4",
+		video: "eXI9RPzCBlo",
 		badges: ["JavaScript", "HTML", "CSS", "GoJS", "Chrome Extension API", "Wikipedia API"],
 		source: "https://github.com/alyab0uzaid/RabbitHole",
 		showSource: true,
@@ -61,7 +61,7 @@
 		</BlurFade>
 
 		<!-- Project Header -->
-		<BlurFade delay={0.35}>
+		<BlurFade delay={2.35}>
 			<header class="mb-12">
 				<h1 class="text-3xl font-bold mb-4">{project.title}</h1>
 				<p class="text-neutral-500 mb-6">{project.description}</p>
@@ -80,20 +80,21 @@
 
 				<!-- Project Video -->
 				<div class="rounded-xl overflow-hidden shadow-lg">
-					<video
-						src={project.video}
-						autoplay
-						loop
-						muted
-						playsinline
-						class="w-full h-auto"
-					></video>
+					<div class="relative w-full aspect-video">
+						<iframe
+							src="https://www.youtube.com/embed/eXI9RPzCBlo?controls=1&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=eXI9RPzCBlo&autoplay=1&mute=1"
+							title="RabbitHole Demo"
+							class="absolute top-0 left-0 w-full h-full"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					</div>
 				</div>
 			</header>
 		</BlurFade>
 
 		<!-- Project Details -->
-		<BlurFade delay={0.45}>
+		<BlurFade delay={2.45}>
 			<div class="space-y-12">
 				<!-- Problem & Solution -->
 				<section>
