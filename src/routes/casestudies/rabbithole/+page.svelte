@@ -119,7 +119,6 @@
 							<div class="rounded-xl overflow-hidden shadow-lg">
 								<video 
 									src="/images/ehacks-timelapse.MOV" 
-									controls
 									class="w-full h-auto"
 									playsinline
 									autoplay

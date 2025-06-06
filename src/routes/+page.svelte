@@ -143,12 +143,11 @@
 			src="/images/profilepicv2.jpeg"
 			alt="Profile Picture"
 			class="w-20 h-20 rounded-full border-2 border-neutral-300 dark:border-neutral-700"
-
 		  />
 		</a>
 		  <div class="ml-4">
 			<h1 class="text-xl font-bold">Aly Abou-Zaid</h1>
-			<p class="text-lg text-neutral-500">Web Developer</p>
+			<p class="text-lg text-neutral-500">Creative Developer</p>
 		  </div>
 		</div>
 	  
@@ -216,14 +215,13 @@
 	  <section id="about" class="mb-16 fadeInUp-animation">
 		<h2 class="text-xl font-semibold mb-2">About Me</h2>
 			<p class="text-neutral-500 leading-relaxed">
-				Hi 👋 I'm Aly Abou-Zaid! Ever since I stumbled upon my first programming tutorial, I've been captivated by the endless possibilities of building things that not only work but also bring joy to people. Web development has been my gateway to merging my technical skills with my love for storytelling and design.
+				I'm Aly. I like making things that look good, work well, and feel purposeful. Sometimes that's a website, sometimes it's a video, sometimes it's a whole brand. I come from a computer science and media background, so I like to mix technical and creative work whenever I can.
 			</p>
 		  
 			<p class="mt-4 text-neutral-500 leading-relaxed">
 				I also really like
 				<a href="/sunsets">
 				<AnimatedGradientText class="relative inline-flex">
-					
 					<span
 						class={cn(
 						`inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
@@ -247,7 +245,6 @@
 				</AnimatedGradientText>
 				</a>
 			  </p>
-			  
 	  </section>
 	  </BlurFade>
 
