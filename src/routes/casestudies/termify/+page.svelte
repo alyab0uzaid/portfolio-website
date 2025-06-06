@@ -9,44 +9,37 @@
 	import { cn } from "$lib/utils";
 
 	const project = {
-		title: "Personal Spotify Terminal Interface",
-		date: "June 2024",
-		description: "Termify provides a unique tactile experience for Spotify users, where they can retrieve top tracks, save playlists, and log out from the terminal interface.",
+		title: "Termify",
+		date: "March 2024",
+		description: "A terminal-style Spotify app for exploring your music and creating playlists by command.",
 		video: "/termifydemov6.mp4",
-		badges: ["Node.js", "Express", "Spotify API", "Pug"],
-		source: "https://github.com/alyab0uzaid/termify",
-		showSource: true,
-		problem: "Many developers and terminal enthusiasts want a more efficient way to control their Spotify playback without leaving their development environment. Traditional Spotify interfaces can be distracting and require switching contexts.",
-		solution: "Termify is a terminal-based Spotify interface that allows users to control their music playback, view their top tracks, and manage playlists directly from the command line. It provides a seamless experience for developers who spend most of their time in the terminal.",
+		badges: ["Express.js", "Pug", "Spotify API"],
+		github: "https://github.com/alyab0uzaid/termify",
+		showGithub: true,
+		problem: "I've always been drawn to interfaces that feel hands-on, like a terminal. I wanted to bring that feel to music. Termify is a web app that connects to your Spotify account and lets you explore your top tracks and build playlists using simple typed commands.",
 		features: [
-			"Terminal-based Spotify control interface",
-			"View and play top tracks",
-			"Create and manage playlists",
-			"Search and play songs",
-			"User authentication and session management"
+			"Connects to Spotify using OAuth2",
+			"Displays your top tracks by timeframe",
+			"Lets you create playlists with commands like `save playlist -mymix`",
+			"Simulates a command-line interface using Express.js, Pug, and the Spotify Web API",
+			"Includes fake terminal prompts, keyboard animations, and a clean, focused layout"
 		],
-		challenges: [
-			"Implementing Spotify API authentication in a terminal environment",
-			"Creating an intuitive command-line interface",
-			"Handling real-time playback controls",
-			"Managing user sessions and tokens"
-		],
+		impact: {
+			status: "Coming Soon",
+			note: "Waiting on Spotify developer approval to go live"
+		},
 		technologies: [
 			{
-				name: "Node.js",
-				description: "Runtime environment for the application"
-			},
-			{
-				name: "Express",
-				description: "Web framework for handling API requests"
-			},
-			{
-				name: "Spotify API",
-				description: "For music playback and user data"
+				name: "Express.js",
+				description: "Backend framework"
 			},
 			{
 				name: "Pug",
-				description: "Template engine for rendering views"
+				description: "Template engine"
+			},
+			{
+				name: "Spotify Web API",
+				description: "Music data & authentication"
 			}
 		]
 	};
@@ -74,8 +67,8 @@
 				
 				<!-- Project Links -->
 				<div class="flex gap-4 mb-8">
-					{#if project.showSource}
-						<a href={project.source} target="_blank" rel="noopener noreferrer">
+					{#if project.showGithub}
+						<a href={project.github} target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" class="gap-2">
 								<Icon icon="mdi:github" class="h-5 w-5" />
 								View Source
@@ -101,45 +94,48 @@
 		<!-- Project Details -->
 		<BlurFade delay={0.45}>
 			<div class="space-y-12">
-				<!-- Problem & Solution -->
+				<!-- Problem -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
-					<div class="space-y-4">
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Problem</h3>
-							<p class="text-neutral-500">{project.problem}</p>
-						</div>
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Solution</h3>
-							<p class="text-neutral-500">{project.solution}</p>
-						</div>
-					</div>
+					<h2 class="text-2xl font-semibold mb-4">Why I Built It</h2>
+					<p class="text-neutral-500 whitespace-pre-line mb-6">{project.problem}</p>
 				</section>
 
-				<!-- Key Features -->
+				<!-- What We Built -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Key Features</h2>
-					<ul class="list-disc list-inside space-y-2 text-neutral-500">
+					<h2 class="text-2xl font-semibold mb-4">What It Does</h2>
+					<ul class="list-none space-y-3 text-neutral-500">
 						{#each project.features as feature}
-							<li>{feature}</li>
+							<li class="flex items-start">
+								<span class="mr-2">•</span>
+								<span class="[&>code]:font-mono [&>code]:bg-neutral-100 [&>code]:dark:bg-neutral-800 [&>code]:px-2 [&>code]:py-0.5 [&>code]:rounded">{@html feature.replace(/`(.*?)`/g, '<code>$1</code>')}</span>
+							</li>
 						{/each}
 					</ul>
 				</section>
 
-				<!-- Challenges -->
+				<!-- Impact -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Challenges</h2>
-					<ul class="list-disc list-inside space-y-2 text-neutral-500">
-						{#each project.challenges as challenge}
-							<li>{challenge}</li>
-						{/each}
-					</ul>
+					<h2 class="text-2xl font-semibold mb-4">Try It Out</h2>
+					<p class="text-neutral-500 mb-6">
+						The app isn't published yet due to Spotify developer restrictions. I'm still waiting on approval to go live. In the meantime, you can visit the GitHub repo and run it locally:
+					</p>
+					<div class="flex gap-4">
+						<a href={project.github} target="_blank" rel="noopener noreferrer">
+							<Button variant="outline" class="gap-2">
+								<Icon icon="mdi:github" class="h-5 w-5" />
+								GitHub Repo
+							</Button>
+						</a>
+					</div>
+					<p class="text-neutral-500 mt-4">
+						The instructions in the readme will guide you through setup so you can use Termify with your own account.
+					</p>
 				</section>
 
-				<!-- Technologies -->
+				<!-- Tech Stack -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+					<h2 class="text-2xl font-semibold mb-4">Tech Stack</h2>
+					<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
 						{#each project.technologies as tech}
 							<div class="p-4 border rounded-lg">
 								<h3 class="font-medium mb-2">{tech.name}</h3>
