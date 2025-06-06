@@ -5,36 +5,35 @@
 	import { cn } from "$lib/utils";
 
 	const project = {
-		title: "PrepGuide.org",
+		title: "PrepGuide",
 		date: "May 2024",
-		description: "PrepGuide is an online platform I co-founded with my brother to provide free resources for SAT preparation.",
+		description: "A clean, free SAT prep site built for real students.",
 		video: "/PrepGuideDemov2.mov",
 		badges: ["Webflow", "CMS"],
 		website: "https://www.prepguide.org/",
 		showWebsite: true,
-		problem: "Many students struggle to find high-quality, free resources for SAT preparation. Existing platforms often require expensive subscriptions or don't provide comprehensive, well-organized study materials.",
-		solution: "PrepGuide.org was created to provide free, high-quality SAT preparation resources in an organized and accessible format. The platform offers a comprehensive collection of study materials, practice tests, and learning resources.",
+		problem: "While preparing for the SAT, my brother and I kept running into the same problem: too many resources, too little clarity. Some were locked behind paywalls, others felt outdated or unorganized, and figuring out what was actually useful took more time than it should have.\n\nThat's what pushed us to build PrepGuide.org, a site that brings together the best free SAT resources in one simple, distraction-free space.\n\nWe didn't want students to waste time digging. We wanted them to open the site and get to work.",
+		solution: "We built PrepGuide.org to fix that. A clean, simple, and 100% free SAT prep site.",
 		features: [
-			"Free access to comprehensive SAT study materials",
-			"Organized content structure for easy navigation",
-			"Practice tests and quizzes",
-			"Study guides and tips",
-			"Regular content updates"
+			"A clean, focused layout organized by SAT topic",
+			"Curated links to trusted, high-quality external resources",
+			"Simple structure designed to reduce friction and overwhelm",
+			"Fully responsive and optimized for mobile",
+			"Built in Webflow, powered by Webflow CMS for easy content updates"
 		],
-		challenges: [
-			"Creating a scalable content management system",
-			"Ensuring content quality and accuracy",
-			"Designing an intuitive user interface",
-			"Managing regular content updates"
-		],
+		impact: {
+			users: "2000+",
+			countries: "70+",
+			growth: "Still growing—driven entirely by word of mouth"
+		},
 		technologies: [
 			{
 				name: "Webflow",
-				description: "For website design and development"
+				description: "Design & deployment"
 			},
 			{
-				name: "CMS",
-				description: "For content management and organization"
+				name: "Webflow CMS",
+				description: "Manage and scale lesson content"
 			}
 		]
 	};
@@ -85,46 +84,61 @@
 		</BlurFade>
 
 		<!-- Project Details -->
-		<BlurFade delay={0.45}>
+		<BlurFade delay={2.45}>
 			<div class="space-y-12">
-				<!-- Problem & Solution -->
+				<!-- Project Overview -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
-					<div class="space-y-4">
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Problem</h3>
-							<p class="text-neutral-500">{project.problem}</p>
+					<div class="text-xl font-semibold mb-8">Built with my brother. Used by students in 70+ countries.</div>
+				</section>
+
+				<!-- Problem -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">The Problem</h2>
+					<p class="text-neutral-500 whitespace-pre-line mb-6">{project.problem}</p>
+				</section>
+
+				<!-- What We Built -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">What We Built</h2>
+					<ul class="list-none space-y-3 text-neutral-500">
+						{#each project.features as feature}
+							<li class="flex items-start">
+								<span class="mr-2">•</span>
+								<span>{feature}</span>
+							</li>
+						{/each}
+					</ul>
+				</section>
+
+				<!-- Impact -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">Impact</h2>
+					<div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+						<div class="p-6 border rounded-lg text-center">
+							<div class="text-4xl font-bold mb-2">{project.impact.users}</div>
+							<div class="text-neutral-500">visitors</div>
 						</div>
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Solution</h3>
-							<p class="text-neutral-500">{project.solution}</p>
+						<div class="p-6 border rounded-lg text-center">
+							<div class="text-4xl font-bold mb-2">{project.impact.countries}</div>
+							<div class="text-neutral-500">countries</div>
+						</div>
+						<div class="p-6 border rounded-lg text-center">
+							<div class="text-neutral-500 text-lg">{project.impact.growth}</div>
 						</div>
 					</div>
 				</section>
 
-				<!-- Key Features -->
+				<!-- Why It Matters -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Key Features</h2>
-					<ul class="list-disc list-inside space-y-2 text-neutral-500">
-						{#each project.features as feature}
-							<li>{feature}</li>
-						{/each}
-					</ul>
+					<h2 class="text-2xl font-semibold mb-4">Why It Matters</h2>
+					<p class="text-neutral-500">
+						This wasn't a class project or a client job. It was something we built because we believed in it. And people are actually using it.
+					</p>
 				</section>
 
-				<!-- Challenges -->
+				<!-- Tech Stack -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Challenges</h2>
-					<ul class="list-disc list-inside space-y-2 text-neutral-500">
-						{#each project.challenges as challenge}
-							<li>{challenge}</li>
-						{/each}
-					</ul>
-				</section>
-
-				<!-- Technologies -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
+					<h2 class="text-2xl font-semibold mb-4">Tech Stack</h2>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 						{#each project.technologies as tech}
 							<div class="p-4 border rounded-lg">
