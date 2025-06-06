@@ -7,9 +7,9 @@
 	const project = {
 		title: "RabbitHole Chrome Extension",
 		date: "March 2025",
-		description: "A Chrome extension that transforms Wikipedia exploration into an elegant, visual journey by creating an interactive flowchart of your research path.",
+		description: "A Chrome extension that transforms Wikipedia exploration into an elegant, visual journey by creating an interactive flowchart of your research path. Built in 48 hours at eHacks, where it won first place! 🏆",
 		video: "eXI9RPzCBlo",
-		badges: ["JavaScript", "HTML", "CSS", "Chrome Extension API", "Wikipedia API", "Dictionary.com API"],
+		badges: ["JavaScript", "HTML", "CSS", "Chrome Extension API", "Wikipedia API", "Dictionary.com API", "48-Hour Hackathon", "First Place Winner"],
 		source: "https://github.com/alyab0uzaid/RabbitHole",
 		showSource: true,
 		problem: "During research, users often find themselves juggling 20+ browser tabs while exploring Wikipedia, losing track of how they got from one topic to another. This scattered tab explosion makes it difficult to maintain context and understand connections between topics.",
@@ -27,7 +27,8 @@
 			"Managing expand/collapse functionality for subtrees",
 			"Fixing connection lines between nodes",
 			"Handling complex DOM manipulation and state management",
-			"Ensuring dynamic updates as users explore new topics"
+			"Ensuring dynamic updates as users explore new topics",
+			"Completing the entire project within the 48-hour hackathon timeframe"
 		],
 		technologies: [
 			{
@@ -98,6 +99,38 @@
 		<!-- Project Details -->
 		<BlurFade delay={2.45}>
 			<div class="space-y-12">
+				<!-- Hackathon Achievement -->
+				<section>
+					<h2 class="text-2xl font-semibold mb-4">Hackathon Success</h2>
+					<div class="space-y-4">
+						<p class="text-neutral-500">
+							RabbitHole was born during eHacks, a 48-hour hackathon that pushed us to think fast and build faster. 
+							Despite the time constraints, we managed to create a fully functional Chrome extension that impressed the judges 
+							and took home first place! 🏆
+						</p>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<div class="rounded-xl overflow-hidden shadow-lg">
+								<img 
+									src="/images/ehacks-winner.JPG" 
+									alt="eHacks 2025 First Place Winners" 
+									class="w-full h-auto"
+								/>
+							</div>
+							<div class="rounded-xl overflow-hidden shadow-lg">
+								<video 
+									src="/images/ehacks-timelapse.MOV" 
+									controls
+									class="w-full h-auto"
+									playsinline
+									autoplay
+									loop
+									muted
+								></video>
+							</div>
+						</div>
+					</div>
+				</section>
+
 				<!-- Problem & Solution -->
 				<section>
 					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
