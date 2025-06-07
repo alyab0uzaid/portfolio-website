@@ -144,16 +144,6 @@
 									class="w-full h-auto"
 								/>
 							</div>
-							<div class="rounded-xl overflow-hidden shadow-lg">
-								<video 
-									src="/images/ehacks-timelapse.MOV" 
-									class="w-full h-auto"
-									playsinline
-									autoplay
-									loop
-									muted
-								></video>
-							</div>
 						</div>
 					</div>
 				</section>
