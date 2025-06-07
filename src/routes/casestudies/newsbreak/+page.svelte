@@ -25,26 +25,17 @@ const nextCaseStudy = currentIndex < creativeCaseStudies.length - 1 ? creativeCa
 const project = {
 	title: "SIUE Newsbreak",
 	date: "2023",
-	description: "A parody news segment delivering fake campus updates with deadpan delivery. Think The Onion, but SIUE-flavored. Handled on-camera anchoring, scriptwriting, and editing.",
-	image: "https://img.youtube.com/vi/Jz45kRU-4Rg/maxresdefault.jpg",
+	description: `SIUE Newsbreak is a parody news segment I wrote, filmed, and edited for Global Village, a student-led media series at SIUE. It was designed to look and sound like a real campus news broadcast, but the stories were completely made up, based on inside jokes and exaggerated takes on student life.\n\nThe humor came from how seriously it was delivered. From the TV studio setup to the anchor tone, everything played it straight, which made the fake stories even funnier for anyone familiar with campus culture.`,
+	image: "/images/newsbreak.png",
 	website: "https://youtu.be/Jz45kRU-4Rg",
-	showWebsite: true,
-	problem: "How can we create a parody news show that looks and feels real, but delivers completely absurd stories?",
-	solution: "Scripted, shot, and edited a news segment with professional pacing and graphics, but filled with intentionally ridiculous content and deadpan delivery.",
+	showWebsite: false,
+	badges: ["Video Production", "Writing", "Editing", "On-Camera", "Broadcast Graphics"],
 	features: [
-		"Scripted parody news",
-		"Professional-style graphics",
-		"Deadpan on-camera delivery",
-		"Campus humor"
-	],
-	challenges: [
-		"Balancing realism and absurdity",
-		"Editing for comedic timing",
-		"Filming in various campus locations"
-	],
-	technologies: [
-		{ name: "Premiere Pro", description: "Editing and graphics" },
-		{ name: "DSLR Camera", description: "Filming" }
+		"Wrote the full script",
+		"Acted as the on-camera news anchor",
+		"Shot in SIUE's campus TV studio",
+		"Edited the full segment, including pacing, timing, and comedic flow",
+		"Created lower-thirds and visual assets to match a real broadcast"
 	]
 };
 </script>
@@ -77,17 +68,18 @@ const project = {
 		<BlurFade delay={0.35}>
 			<header class="mb-12">
 				<h1 class="text-3xl font-bold mb-4">{project.title}</h1>
-				<p class="text-neutral-500 mb-6">{project.description}</p>
-				<div class="flex gap-4 mb-8">
-					{#if project.showWebsite}
-						<a href={project.website} target="_blank" rel="noopener noreferrer">
-							<Button variant="outline" class="gap-2">
-								<Icon icon="proicons:globe" class="h-5 w-5" />
-								Watch Video
-							</Button>
-						</a>
-					{/if}
+				<p class="text-neutral-500 mb-6 whitespace-pre-line">{project.description}</p>
+				<!-- Project Tags -->
+				<div class="flex flex-wrap gap-2 mb-8">
+					{#each project.badges as badge}
+						<Badge variant="secondary">{badge}</Badge>
+					{/each}
 				</div>
+			</header>
+		</BlurFade>
+
+		<BlurFade delay={0.45}>
+			<div class="space-y-12">
 				<!-- YouTube Embed -->
 				<div class="rounded-xl overflow-hidden shadow-lg aspect-video">
 					<iframe
@@ -99,57 +91,15 @@ const project = {
 						class="w-full h-full"
 					></iframe>
 				</div>
-			</header>
-		</BlurFade>
 
-		<BlurFade delay={0.45}>
-			<div class="space-y-12">
-				<!-- Problem & Solution -->
+				<!-- My Role -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
-					<div class="space-y-4">
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Problem</h3>
-							<p class="text-neutral-500">{project.problem}</p>
-						</div>
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Solution</h3>
-							<p class="text-neutral-500">{project.solution}</p>
-						</div>
-					</div>
-				</section>
-
-				<!-- Key Features -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+					<h2 class="text-2xl font-semibold mb-4">My Role</h2>
 					<ul class="list-disc list-inside space-y-2 text-neutral-500">
 						{#each project.features as feature}
 							<li>{feature}</li>
 						{/each}
 					</ul>
-				</section>
-
-				<!-- Challenges -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Challenges</h2>
-					<ul class="list-disc list-inside space-y-2 text-neutral-500">
-						{#each project.challenges as challenge}
-							<li>{challenge}</li>
-						{/each}
-					</ul>
-				</section>
-
-				<!-- Technologies -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						{#each project.technologies as tech}
-							<div class="p-4 border rounded-lg">
-								<h3 class="font-medium mb-2">{tech.name}</h3>
-								<p class="text-neutral-500">{tech.description}</p>
-							</div>
-						{/each}
-					</div>
 				</section>
 			</div>
 		</BlurFade>
