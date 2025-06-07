@@ -23,32 +23,25 @@ const prevCaseStudy = currentIndex > 0 ? creativeCaseStudies[currentIndex - 1] :
 const nextCaseStudy = currentIndex < creativeCaseStudies.length - 1 ? creativeCaseStudies[currentIndex + 1] : null;
 
 const project = {
-	title: "Zain Motors Stat Reels",
+	title: "Zain Motors Reel Template",
 	date: "2024",
-	description: "Short-form vertical videos showcasing car listings with fast specs and visuals. I created TikTok-style reels for Zain Motors, combining sleek footage, bold text animations, and quickfire stats (price, horsepower, MPG, etc.) to make used car listings feel modern and scroll-stopping.",
+	description: "A custom After Effects template for Zain Motors' Instagram reels, bringing consistency and polish to their vehicle showcase videos. The template streamlines their content creation process, allowing them to drop in vehicle specs and apply professional overlays in seconds.",
 	image: "/images/zainmotors.png",
-	website: "#",
-	showWebsite: false,
-	problem: "How can we make used car listings more engaging and appealing to younger audiences on social media?",
-	solution: "Developed a series of TikTok-style reels that transform traditional car listings into dynamic, attention-grabbing content that highlights key specifications and features in an engaging format.",
+	website: "https://www.instagram.com/zain.motors1/",
+	showWebsite: true,
+	badges: ["After Effects", "Motion Graphics", "Sound Design"],
 	features: [
-		"Vertical video format",
-		"Dynamic text animations",
-		"Quick-fire car specifications",
-		"Modern visual style",
-		"Social media optimization"
+		"Modular overlay template for quick content creation",
+		"Customizable fields for price, engine, horsepower, mileage, and drivetrain",
+		"Motion sound effects synchronized with visual transitions",
+		"Streamlined system for repeatable content production",
+		"Professional, consistent branding across all reels"
 	],
 	challenges: [
-		"Condensing car information into short, engaging clips",
-		"Creating consistent branding across multiple reels",
-		"Balancing information density with visual appeal",
-		"Optimizing for different social media platforms"
-	],
-	technologies: [
-		{ name: "Premiere Pro", description: "Video editing and timeline management" },
-		{ name: "After Effects", description: "Motion graphics and text animations" },
-		{ name: "Mobile Camera", description: "Vertical video capture" },
-		{ name: "Social Media", description: "Platform-specific optimization" }
+		"Creating a flexible template that works for different vehicle types",
+		"Balancing visual impact with quick production time",
+		"Ensuring sound design enhances rather than distracts",
+		"Making the template easy to use for non-designers"
 	]
 };
 </script>
@@ -61,15 +54,15 @@ const project = {
 					<Icon icon="mdi:arrow-left" class="h-6 w-6 inline-block mr-2" />
 					Back to Home
 				</a>
-				<div class="flex gap-6 text-base font-medium">
+				<div class="flex gap-6">
 					{#if prevCaseStudy}
-						<a href={prevCaseStudy} class="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition flex items-center">
+						<a href={prevCaseStudy} class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition flex items-center">
 							<Icon icon="mdi:arrow-left" class="h-5 w-5 mr-1" />
 							<span>prev</span>
 						</a>
 					{/if}
 					{#if nextCaseStudy}
-						<a href={nextCaseStudy} class="text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white transition flex items-center">
+						<a href={nextCaseStudy} class="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition flex items-center">
 							<span>next</span>
 							<Icon icon="mdi:arrow-right" class="h-5 w-5 ml-1" />
 						</a>
@@ -82,12 +75,21 @@ const project = {
 			<header class="mb-12">
 				<h1 class="text-3xl font-bold mb-4">{project.title}</h1>
 				<p class="text-neutral-500 mb-6">{project.description}</p>
+				
+				<!-- Project Tags -->
+				<div class="flex flex-wrap gap-2 mb-8">
+					{#each project.badges as badge}
+						<Badge variant="secondary">{badge}</Badge>
+					{/each}
+				</div>
+
+				<!-- Project Links -->
 				<div class="flex gap-4 mb-8">
 					{#if project.showWebsite}
 						<a href={project.website} target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" class="gap-2">
-								<Icon icon="proicons:globe" class="h-5 w-5" />
-								View Project
+								<Icon icon="mdi:instagram" class="h-5 w-5" />
+								View on Instagram
 							</Button>
 						</a>
 					{/if}
@@ -111,52 +113,27 @@ const project = {
 					></video>
 				</div>
 
-				<!-- Problem & Solution -->
+				<!-- My Role -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
-					<div class="space-y-4">
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Problem</h3>
-							<p class="text-neutral-500">{project.problem}</p>
-						</div>
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Solution</h3>
-							<p class="text-neutral-500">{project.solution}</p>
-						</div>
-					</div>
-				</section>
-
-				<!-- Key Features -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+					<h2 class="text-2xl font-semibold mb-4">My Role</h2>
 					<ul class="list-disc list-inside space-y-2 text-neutral-500">
-						{#each project.features as feature}
-							<li>{feature}</li>
-						{/each}
+						<li>Designed and animated a modular overlay template in After Effects</li>
+						<li>Included fields for price, engine, horsepower, mileage, and drivetrain</li>
+						<li>Added motion sound effects to enhance visual transitions</li>
+						<li>Adjusted timing, pitch, and direction of sounds to match the animations</li>
+						<li>Delivered a streamlined system for repeatable content production</li>
 					</ul>
 				</section>
 
-				<!-- Challenges -->
+				<!-- What It Highlights -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Challenges</h2>
+					<h2 class="text-2xl font-semibold mb-4">What It Highlights</h2>
 					<ul class="list-disc list-inside space-y-2 text-neutral-500">
-						{#each project.challenges as challenge}
-							<li>{challenge}</li>
-						{/each}
+						<li>Real-world motion design for a small business</li>
+						<li>Efficient workflow for rapid content creation</li>
+						<li>Visual consistency across multiple reels</li>
+						<li>Use of sound design to enhance visual impact without extra editing</li>
 					</ul>
-				</section>
-
-				<!-- Technologies -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						{#each project.technologies as tech}
-							<div class="p-4 border rounded-lg">
-								<h3 class="font-medium mb-2">{tech.name}</h3>
-								<p class="text-neutral-500">{tech.description}</p>
-							</div>
-						{/each}
-					</div>
 				</section>
 			</div>
 		</BlurFade>

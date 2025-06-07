@@ -23,28 +23,24 @@ const prevCaseStudy = currentIndex > 0 ? creativeCaseStudies[currentIndex - 1] :
 const nextCaseStudy = currentIndex < creativeCaseStudies.length - 1 ? creativeCaseStudies[currentIndex + 1] : null;
 
 const project = {
-	title: "What Are You Thankful For?",
-	date: "November 2023",
-	description: "A feel-good Thanksgiving street interview video capturing students' responses about what they're thankful for. Filmed at SIUE with quick cuts and cozy campus vibes.",
-	image: "https://img.youtube.com/vi/Q1fgyZ5Dl0A/hqdefault.jpg",
-	website: "https://youtu.be/Q1fgyZ5Dl0A",
-	showWebsite: true,
-	problem: "How can we capture authentic, positive moments from students on campus and share them in a way that feels genuine and uplifting?",
-	solution: "Filmed spontaneous interviews with students, edited for quick pacing and cozy vibes, and published as a short, shareable video.",
+	title: "Global Village: Thanksgiving Episode",
+	date: "2023",
+	description: "This piece was created for the Thanksgiving episode of Global Village, a student-produced series at SIUE that highlights culture and student life through creative video segments.\n\nWhat began as a simple set of on-campus interviews turned into something more playful — thanks to an unexpected moment that reshaped the entire edit. The final result mixes genuine reflections with subtle comedy, giving the piece a rhythm and personality of its own.",
+	image: "/images/thankful.png",
+	website: "https://www.youtube.com/watch?v=your-video-id",
+	showWebsite: false,
+	badges: ["Video Production", "Interviewing", "Editing", "Hosting"],
 	features: [
-		"Street interviews",
-		"Quick-cut editing",
-		"Authentic student responses",
-		"Seasonal/holiday theme"
+		"Directed and conducted all interviews",
+		"Handled the editing, pacing, and narrative structure",
+		"On-camera host and interviewer",
+		"Created the comedic rhythm through selective cuts and callbacks"
 	],
 	challenges: [
-		"Getting students comfortable on camera",
-		"Editing for both brevity and warmth",
-		"Capturing good audio outdoors"
-	],
-	technologies: [
-		{ name: "Premiere Pro", description: "Editing and color grading" },
-		{ name: "DSLR Camera", description: "Filming interviews" }
+		"Adapting to unexpected moments during filming",
+		"Balancing genuine content with comedic elements",
+		"Creating a cohesive narrative from multiple interviews",
+		"Maintaining engaging pacing throughout the piece"
 	]
 };
 </script>
@@ -77,17 +73,28 @@ const project = {
 		<BlurFade delay={0.35}>
 			<header class="mb-12">
 				<h1 class="text-3xl font-bold mb-4">{project.title}</h1>
-				<p class="text-neutral-500 mb-6">{project.description}</p>
-				<div class="flex gap-4 mb-8">
-					{#if project.showWebsite}
-						<a href={project.website} target="_blank" rel="noopener noreferrer">
-							<Button variant="outline" class="gap-2">
-								<Icon icon="proicons:globe" class="h-5 w-5" />
-								Watch Video
-							</Button>
-						</a>
-					{/if}
+				<p class="text-neutral-500 mb-6 whitespace-pre-line">{project.description}</p>
+				
+				<!-- Project Tags -->
+				<div class="flex flex-wrap gap-2 mb-8">
+					{#each project.badges as badge}
+						<Badge variant="secondary">{badge}</Badge>
+					{/each}
 				</div>
+
+				<!-- Recognition (moved above video) -->
+				<section class="flex justify-center my-12">
+					<div class="flex items-center gap-4">
+						<Icon icon="ph:laurel-leaf" class="h-16 w-16 text-yellow-500 -scale-x-100" />
+						<div class="text-center">
+							<div class="text-lg font-bold tracking-wide text-neutral-800 dark:text-neutral-100">Best Of</div>
+							<div class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">Global Village</div>
+							<div class="text-base font-medium text-neutral-500 mt-1">Segment</div>
+						</div>
+						<Icon icon="ph:laurel-leaf" class="h-16 w-16 text-yellow-500" />
+					</div>
+				</section>
+
 				<!-- YouTube Embed -->
 				<div class="rounded-xl overflow-hidden shadow-lg aspect-video">
 					<iframe
@@ -104,24 +111,9 @@ const project = {
 
 		<BlurFade delay={0.45}>
 			<div class="space-y-12">
-				<!-- Problem & Solution -->
+				<!-- My Role -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Problem & Solution</h2>
-					<div class="space-y-4">
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Problem</h3>
-							<p class="text-neutral-500">{project.problem}</p>
-						</div>
-						<div>
-							<h3 class="text-lg font-medium mb-2">The Solution</h3>
-							<p class="text-neutral-500">{project.solution}</p>
-						</div>
-					</div>
-				</section>
-
-				<!-- Key Features -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+					<h2 class="text-2xl font-semibold mb-4">My Role</h2>
 					<ul class="list-disc list-inside space-y-2 text-neutral-500">
 						{#each project.features as feature}
 							<li>{feature}</li>
@@ -129,27 +121,10 @@ const project = {
 					</ul>
 				</section>
 
-				<!-- Challenges -->
+				<!-- Simple Recognition at the bottom -->
 				<section>
-					<h2 class="text-2xl font-semibold mb-4">Challenges</h2>
-					<ul class="list-disc list-inside space-y-2 text-neutral-500">
-						{#each project.challenges as challenge}
-							<li>{challenge}</li>
-						{/each}
-					</ul>
-				</section>
-
-				<!-- Technologies -->
-				<section>
-					<h2 class="text-2xl font-semibold mb-4">Technologies Used</h2>
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						{#each project.technologies as tech}
-							<div class="p-4 border rounded-lg">
-								<h3 class="font-medium mb-2">{tech.name}</h3>
-								<p class="text-neutral-500">{tech.description}</p>
-							</div>
-						{/each}
-					</div>
+					<h2 class="text-xl font-semibold mb-2">Recognition</h2>
+					<p class="text-neutral-500">Nominated for the “Best Of” episode of Global Village.</p>
 				</section>
 			</div>
 		</BlurFade>
